@@ -3,7 +3,6 @@
   justify-content: space-between;
   padding-top: 10px;
   padding: 0 25px;
-  background-color: #fff;
   height: 58px;
   border-bottom: 1px solid rgba(239, 239, 239, 0.6);
 }
@@ -11,32 +10,17 @@
   display: flex;
   align-items: center;
 }
-.navbar-section1 i {
-  cursor: pointer;
-  padding: 8px;
-  text-decoration: none;
-  list-style: none;
-  color: initial;
-}
 .navbar-section1-container {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  list-style: none;
-  color: initial;
 }
-.navbar-section1-container i {
-  cursor: pointer;
-  padding: 8px;
-  text-decoration: none;
-  list-style: none;
-  color: initial;
+.navbar-section1-container .fa-youtube {
   color: #ff0000;
 }
 .navbar-section1-container span {
   letter-spacing: -1.5px;
   font-family: "Oswald", sans-serif;
-  margin-left: -6px;
+  margin-left: 2px;
   font-weight: 500;
 }
 .navbar-section2 {
@@ -51,6 +35,7 @@
   background-color: #fff;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 .navbar-section2-container-search {
   width: 100%;
@@ -59,20 +44,11 @@
   padding-bottom: 7px;
   padding-left: 10px;
   border: 1px solid rgba(128, 128, 128, 0.8);
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border: 0;
 }
 .navbar-section2-container-search:focus {
   outline: 1.5px solid #1746A2;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-}
-.navbar-section2-container-search::-moz-placeholder {
-  color: rgb(169, 169, 169);
-  font-weight: 500;
-}
-.navbar-section2-container-search:-ms-input-placeholder {
-  color: rgb(169, 169, 169);
-  font-weight: 500;
 }
 .navbar-section2-container-search::placeholder {
   color: rgb(169, 169, 169);
@@ -81,13 +57,11 @@
 .navbar-section2-container button {
   padding: 0;
   margin: 0;
-  background-color: rgb(245, 245, 245);
+  background-color: rgba(245, 245, 245, 0.4);
   width: 67px;
   height: 40px;
-  border: 1px solid rgba(128, 128, 128, 0.8);
+  border: 0;
   border-left: none;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
   transition: 0.1s;
 }
 .navbar-section2-container button .fa-magnifying-glass {
@@ -100,15 +74,12 @@
 .navbar-section2-container button:focus {
   background-color: rgba(112, 112, 112, 0.15);
 }
-.navbar-section2 .fa-microphone {
+.navbar-section2 .microphone-icon {
   background-color: rgba(239, 239, 239, 0.5);
   border-radius: 50%;
   margin-left: 9px;
   padding: 12px;
   cursor: pointer;
-}
-.navbar-section2 span {
-  border: 1px solid red;
 }
 .navbar-section3 {
   display: flex;
@@ -116,11 +87,12 @@
   position: relative;
 }
 .navbar-section3 .style-video svg {
-  cursor: pointer;
-  padding: 8px;
   text-decoration: none;
   list-style: none;
   color: initial;
+  padding: 0;
+  margin: 0;
+  padding: 0 8px;
 }
 .navbar-section3 .style-video svg:last-child {
   top: 10%;
@@ -128,20 +100,13 @@
   position: absolute;
   font-weight: bold;
 }
-.navbar-section3 .fa-bell {
-  cursor: pointer;
-  padding: 8px;
-  text-decoration: none;
-  list-style: none;
-  color: initial;
-}
 .navbar-section3 .profile {
   cursor: pointer;
 }
 .navbar-section3 .profile img {
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .active-circle:active {
@@ -149,12 +114,138 @@
   background-color: rgba(239, 239, 240, 0.1);
 }
 
+.prueba {
+  display: flex;
+  height: 100%;
+}
+.prueba p {
+  background-color: red;
+  top: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.prueba input {
+  width: 100%;
+}
+.prueba input:focus {
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.prueba:focus {
+  outline: 1px solid red;
+  background: #000;
+}
+
+.bi-search {
+  background-color: blue;
+  padding: 10px;
+}
+
+.main-container {
+  display: flex;
+}
+.main-container .section1 {
+  width: 285px;
+  overflow: hidden;
+}
+.main-container .section1 .bar, .main-container .section1 .bar-section2, .main-container .section1 .bar-section3 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 13px;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.4);
+  padding-bottom: 10px;
+}
+.main-container .section1 .bar button, .main-container .section1 .bar-section2 button, .main-container .section1 .bar-section3 button {
+  text-transform: capitalize;
+  padding-left: 30px;
+  text-align: left;
+  width: 100%;
+  height: 40px;
+}
+.main-container .section1 .bar button i, .main-container .section1 .bar-section2 button i, .main-container .section1 .bar-section3 button i {
+  color: inherit;
+}
+.main-container .section1 .bar button span, .main-container .section1 .bar-section2 button span, .main-container .section1 .bar-section3 button span {
+  font-weight: 600;
+  letter-spacing: -1.2px;
+}
+.main-container .section2 {
+  cursor: pointer;
+  align-self: flex-start;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(245, 245, 245, 0.4);
+  display: grid;
+  grid-template-columns: repeat(4, 296px);
+  justify-content: space-between;
+}
+.main-container .section2 .container-card img {
+  width: 100%;
+  height: 169px;
+}
+.main-container .section2 .container-card .container-ob {
+  display: flex;
+}
+.main-container .section2 .container-card .container-ob img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.main-container .section2 .container-card .container-ob .content {
+  margin-left: 10px;
+  margin-right: 6px;
+}
+.main-container .section2 .container-card .container-ob .content .title {
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+.main-container .section2 .container-card .container-ob .content .user, .main-container .section2 .container-card .container-ob .content .views {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.main-container .section2 .container-card .container-ob .content .user:hover {
+  color: rgba(128, 128, 128, 0.8);
+}
+.main-container .section2 h5 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-card .fa-ellipsis-vertical {
+  display: none;
+}
+
+.container-card:hover .fa-ellipsis-vertical {
+  display: block;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #333;
+  background-color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  border: 0;
+  background: inherit;
+}
+
+a, i {
+  text-decoration: none;
+  list-style: none;
+  color: initial;
+  padding: 0;
+  margin: 0;
 }
 
 .style-video {
@@ -169,4 +260,13 @@ body {
 
 a:hover {
   color: initial;
+}
+
+.active {
+  background-color: rgba(158, 158, 158, 0.3);
+  font-family: "Roboto", sans-serif;
+}
+
+.link:hover {
+  background-color: rgba(158, 158, 158, 0.3);
 }/*# sourceMappingURL=style.css.map */

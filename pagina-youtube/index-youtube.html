@@ -14,22 +14,21 @@
     <!-- Font Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Oswald:wght@300;400;500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- Style CSS -->
     <link rel="stylesheet" href="sass/style.css">
     <title>Youtube</title>
 </head>
 <body>
-    <h1>Probado</h1>
     <header class="navbar">
-        <!-- <div class="navbar-bar">
-            Aqui
-        </div> -->
         <div class="navbar-section1">
-            <i class="fa-solid fa-bars active-circle fs-5"></i>
-            <a class="navbar-section1-container ms-2" href="https://www.youtube.com">
+            <button type="button" class="">
+                <i class="fa-solid fa-bars active-circle fs-5 p-0 m-0"></i>
+            </button>
+            <a class="navbar-section1-container ms-4" href="https://www.youtube.com">
                 <i class="fa-brands fa-youtube fs-3"></i>
                 <span class="fs-4">
                     Youtube
@@ -38,12 +37,18 @@
         </div>
         <div class="navbar-section2">
             <div class="navbar-section2-container">
-                <input type="text" class="navbar-section2-container-search" placeholder="Buscar">
+                <div class="prueba">
+                    <!-- <i class="bi bi-search"></i> -->
+                    <p>Pru</p>
+                    <input type="text" class="navbar-section2-container-search" placeholder="Buscar" id="input-search" data-prueba="true">
+                </div>
                 <button type="button">
                     <i class="fa-solid fa-magnifying-glass fs-6"></i>
                 </button>
             </div>
-            <i class="fa-solid fa-microphone"></i>
+            <button type="button" class="microphone-icon">
+                <i class="fa-solid fa-microphone"></i>
+            </button>
         </div>
         <div class="navbar-section3">
             <div class="style-video">
@@ -54,12 +59,82 @@
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                 </svg>
             </div>
-            <i class="fa-regular fa-bell fs-4 ms-3"></i>
-            <div class="profile ms-3">
-                <img src="assets/image/jg_gj_logo_design.webp" alt="">
-            </div>
+            <button type="button" class="">
+                <i class="fa-regular fa-bell fs-4 ms-3"></i>
+            </button>
+            <!-- <div class="profile ms-3"> -->
+                <button type="button" class="profile ms-3">
+                    <img src="assets/image/jg_gj_logo_design.webp" alt="">
+                </button>
+            <!-- </div> -->
         </div>
     </header>
-    <main></main>
+    <main class="main-container">
+        <div class="section1">
+            <div class="bar">
+                <button type="button" class="link active">
+                    <i class="bi bi-house-door-fill fs-5" data-icon="bi-house-door"></i>
+                    <span class="ms-3">inicio</span>
+                </button>
+                <button type="button" class="link">
+                    <i class="bi bi-file-play fs-5" data-icon="bi-file-play"></i>
+                    <span class="ms-3">shorts</span>
+                </button>
+                <button type="button" class="link">
+                    <i class="bi bi-collection-play fs-5" data-icon="bi-collection-play"></i>
+                    <span class="ms-3">suscripciones</span>
+                </button>
+            </div>
+            <div class="bar-section2">
+                <button type="button" class="link">
+                    <i class="bi bi-collection fs-5" data-icon="bi-collection"></i>
+                    <span class="ms-3">biblioteca</span>
+                </button>
+                <button type="button" class="link">
+                    <i class="bi bi-clock fs-5" data-icon="bi-clock"></i>
+                    <span class="ms-3">historial</span>
+                </button>
+            </div>
+            <div class="bar-section3">
+                <h6 class="fw-bold text-uppercase mt-3">explorar</h6>
+                <button type="button" class="link">
+                    <i class="bi bi-lightning-charge fs-5" data-icon="bi-lightning-charge"></i>
+                    <span class="ms-3">tendencia</span>
+                </button>
+                <button type="button" class="link">
+                    <i class="bi bi-file-music fs-5" data-icon="bi-file-music"></i>
+                    <span class="ms-3">música</span>
+                </button>
+                <button type="button" class="link">
+                    <i class="bi bi-dice-3 fs-5" data-icon="bi-dice-3"></i>
+                    <span class="ms-3">juegos</span>
+                </button>
+                <button type="button" class="link">
+                    <i class="bi bi-trophy fs-5" data-icon="bi-trophy"></i>
+                    <span class="ms-3">deportes</span>
+                </button>
+                <button type="button" class="link">
+                    <i class="bi bi-lightbulb fs-5" data-icon="bi-lightbulb"></i>
+                    <span class="ms-3">aprendizaje</span>
+                </button>
+            </div>
+        </div>
+        <div class="section2 p-4" id="container-card"></div>
+        <template id="template">
+            <div class="container-card">
+                <img src="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg" class="image w-100" alt="">
+                <div class="container-ob mt-2">
+                    <img src="https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg" class="user-img" alt="">
+                    <div class="content w-100">
+                        <h6 class="title m-0">Lorem ipsum dolor sit amet.<i class="fa-solid fa-ellipsis-vertical"></i></h6>
+                        <!-- <span class="Autor">Lorem ipsum dolor sit.</span> -->
+                        <a href="#" class="user m-0 mt-1">pedro</a>
+                        <p class="views m-0">10000 visualizaciones • hace 10 horas</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </main>
+    <script src="js/index.js"></script>
 </body>
 </html>
