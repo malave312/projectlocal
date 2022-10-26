@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            input {padding: 20px;margin: 10px;font-size: 18px;}
+            .label,
+            .integerPositivo,
+            .integerIndistinto,
+            .numberPositivo,
+            .numberIndistinto,
+            .numberPositivoFixed,
+            .numberIndistintoFixed {text-align: right;}
+            .positivos {color: black;}
+            .negativos {color: red;}
+        </style>
+    </head>
+    <body>
+        <h2>FORMATEAR UN INPUT NUMERICO SEGUN SE TECLEA UN VALOR</h2>
+        <table>
+            <tr>
+                <td class="label">Float(+/-)</td>
+                <td><input class="numberIndistinto"></td>
+            </tr>
+        </table>
+        <script>
+            //variables globales para definir el separador de millares y decimales
+            //Para coma millares y punto en decimales (USA)
+            const MILLARES=",";
+            const DECIMALES=".";
+            const DTFLOCAL = new Intl.NumberFormat('en-US');
+            //Para coma decimal y punto en millares (ESPAÑA)
+            //const MILLARES=".";
+            //const DECIMALES=",";
+            //const DTFLOCAL = new Intl.NumberFormat('es-ES');
+            // Formatear numeros enteros indistintamente tanto positivos como negativos
+            // Formatear solamente numeros enteros positivos
+            // Formatear numeros decimales indistintamente tanto positivos como negativos
+            function numberFormatIndistinto(e) {
+                if (this.value === "") {
+                    return;
+                }
+                // Obtenemos un array con el numero y los decimales si hay
+                let caracterInicial = this.value.substring(0, 1);
+                let contenido="";
+                if (MILLARES===","){
+                    contenido = (caracterInicial === "-") ? this.value.substring(1, this.value.length).replace(/[^0-9\.]/g, "").split(".") : this.value.replace(/[^0-9\.]/g, "").split(".");
+                }
+                // else{
+                //     contenido = (caracterInicial === "-") ? this.value.substring(1, this.value.length).replace(/[^0-9\,]/g, "").split(",") : this.value.replace(/[^0-9\,]/g, "").split(",");
+                // }
+                // añadimos los separadores de miles al primer numero del array
+                contenido[0] = contenido[0].length ? DTFLOCAL.format(parseInt(contenido[0])) : "0";
+                // Juntamos el numero con los decimales si hay decimales
+                this.value = contenido.length > 1 ? contenido.slice(0, 2).join(".") : contenido[0];
+                if (caracterInicial === "-") {
+                    this.value = caracterInicial + this.value;
+                }
+                //damos color rojo si numero negativo
+                // this.className = (this.value.substring(0, 1) !== "-") ? "numberIndistinto positivos" : "numberIndistinto negativos";
+            }
+            window.onload = function() {
+                //SE EJECUTA DESPUES CARGAR EL CODIGO CSS y HTML
+                // Creamos el evento keyup
+                // document.querySelectorAll(".integerIndistinto").forEach(el => el.addEventListener("keyup", integerFormatIndistinto));
+                document.querySelectorAll(".numberIndistinto").forEach(el => el.addEventListener("keyup", numberFormatIndistinto));
+            };
+        </script>
+    </body>
+</html>

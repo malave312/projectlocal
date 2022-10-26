@@ -1,0 +1,386 @@
+.column1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.column2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(222deg, 26%, 31%);
+  padding: 0;
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+#display-text2 {
+  background-color: darkred;
+}
+
+.main-container .header {
+  margin: 0 auto;
+}
+
+.display-calc {
+  margin: 0 auto;
+  margin-top: 75px;
+  width: 428px;
+  height: 378px;
+}
+.display-calc .title {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 32px;
+}
+
+.display-text, .display-text2 {
+  background-color: hsl(224deg, 36%, 15%);
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  text-align: right;
+  font-size: 4rem;
+  padding: 0 1.4rem;
+  padding-top: 10px;
+}
+
+.display-text::-moz-placeholder, .display-text2::-moz-placeholder {
+  color: #fff;
+}
+
+.display-text:-ms-input-placeholder, .display-text2:-ms-input-placeholder {
+  color: #fff;
+}
+
+.display-text::placeholder, .display-text2::placeholder {
+  color: #fff;
+}
+
+.table-grid {
+  background-color: hsl(223deg, 31%, 20%);
+  border-radius: 8px;
+  color: #fff;
+  margin-top: 20px;
+  padding: 25px 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 84px);
+  grid-template-rows: repeat(5, 50px);
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+
+.grid-col {
+  width: auto;
+  height: 100%;
+}
+
+.grid-col > input {
+  align-items: stretch;
+  background-color: hsl(30deg, 25%, 89%);
+  border: 0;
+  width: 77px;
+  height: 53px;
+  border-radius: 7px;
+  border-bottom: 3.8px solid hsl(35deg, 11%, 61%);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 50px;
+  color: hsl(221deg, 14%, 31%);
+  height: 100%;
+}
+
+.grid-col > input:hover {
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+.grid-col > input:active {
+  transform: translateY(4px);
+  border-bottom: 0;
+  height: 50px;
+}
+
+.grid-col > .button-gray {
+  background-color: hsl(225deg, 21%, 49%);
+  border-bottom: 3.8px solid hsl(224deg, 28%, 35%);
+}
+
+.grid-col > .button-gray:hover {
+  background-color: #A2B3E1;
+}
+
+.grid-col > .button-red {
+  background-color: hsl(6deg, 63%, 50%);
+  border-bottom: 3.8px solid hsl(6deg, 70%, 34%);
+}
+
+.grid-col > .button-red:hover {
+  background-color: #F96C5B;
+}
+
+.input-check > input {
+  visibility: hidden;
+}
+
+.container-toggle {
+  display: flex;
+  align-items: center;
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+}
+
+.text-toggle {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.active {
+  background-color: hsl(6deg, 63%, 50%);
+}
+
+.tri-state-toggle {
+  width: 57px;
+  height: 21px;
+  background-color: hsl(223deg, 31%, 20%);
+  border-radius: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 2px;
+}
+
+.button {
+  visibility: hidden;
+}
+
+.checkbox {
+  width: 27%;
+  height: 75%;
+  border-radius: 34px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox:hover {
+  background-color: #F96C5B;
+}
+
+.checkbox > span {
+  position: absolute;
+  font-weight: bold;
+  top: 0;
+  font-size: 0.6rem;
+}
+
+body.theme2 {
+  background-color: hsl(0deg, 0%, 90%);
+}
+
+.display-text.theme2, .display-text2.theme2 {
+  background-color: hsl(0deg, 0%, 93%);
+  color: hsl(60deg, 10%, 19%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.display-text.theme2::-moz-placeholder, .display-text2.theme2::-moz-placeholder {
+  color: hsl(60deg, 10%, 19%);
+}
+
+.display-text.theme2:-ms-input-placeholder, .display-text2.theme2:-ms-input-placeholder {
+  color: hsl(60deg, 10%, 19%);
+}
+
+.display-text.theme2::placeholder, .display-text2.theme2::placeholder {
+  color: hsl(60deg, 10%, 19%);
+}
+
+.container-toggle.theme2,
+.title.theme2 {
+  color: hsl(60deg, 10%, 19%);
+}
+
+.table-grid.theme2 {
+  background-color: hsl(0deg, 5%, 81%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.tri-state-toggle.theme2 {
+  background-color: hsl(0deg, 5%, 81%);
+}
+
+.checkbox.theme2 {
+  background-color: hsl(25deg, 99%, 27%);
+}
+
+.grid-col > input.theme2 {
+  background-color: hsl(45deg, 7%, 89%);
+  border-bottom: 3.8px solid hsl(35deg, 11%, 61%);
+}
+
+.grid-col > input.theme2:hover {
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+.grid-col > input.theme2:active {
+  transform: translateY(4px);
+  border-bottom: 0;
+  height: 50px;
+}
+
+.grid-col > .button-gray.theme2 {
+  background-color: hsl(185deg, 42%, 37%);
+  border-bottom: 3.8px solid hsl(185deg, 58%, 25%);
+}
+
+.grid-col > .button-gray.theme2:hover {
+  background-color: #62B5BD;
+}
+
+.grid-col > .button-red.theme2 {
+  background-color: hsl(25deg, 98%, 40%);
+  border-bottom: 3.8px solid hsl(25deg, 99%, 27%);
+}
+
+.grid-col > .button-red.theme2:hover {
+  background-color: hsl(25deg, 100%, 61%);
+}
+
+body.theme3 {
+  background-color: hsl(268deg, 75%, 9%);
+}
+
+.display-text.theme3, .display-text2.theme3 {
+  background-color: hsl(268deg, 71%, 12%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.display-text.theme3::-moz-placeholder, .display-text2.theme3::-moz-placeholder {
+  color: hsl(52deg, 100%, 62%);
+}
+
+.display-text.theme3:-ms-input-placeholder, .display-text2.theme3:-ms-input-placeholder {
+  color: hsl(52deg, 100%, 62%);
+}
+
+.display-text.theme3::placeholder, .display-text2.theme3::placeholder {
+  color: hsl(52deg, 100%, 62%);
+}
+
+.container-toggle.theme3,
+.title.theme3 {
+  color: hsl(52deg, 100%, 62%);
+}
+
+.table-grid.theme3 {
+  background-color: hsl(268deg, 71%, 12%);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.tri-state-toggle.theme3 {
+  background-color: hsl(268deg, 71%, 12%);
+}
+
+.active.theme3 {
+  background-color: hsl(176deg, 100%, 44%);
+}
+
+.grid-col > input.theme3 {
+  background-color: #331B4D;
+  background-color: hsl(268deg, 47%, 21%);
+  border-bottom: 3.8px solid hsl(290deg, 70%, 36%);
+  color: hsl(52deg, 100%, 62%);
+}
+
+.grid-col > input.theme3:hover {
+  background-color: hsl(281deg, 89%, 26%);
+}
+
+.grid-col > input.theme3:active {
+  transform: translateY(4px);
+  border-bottom: 0;
+  height: 50px;
+}
+
+.grid-col > .button-gray.theme3 {
+  background-color: hsl(281deg, 89%, 26%);
+  border-bottom: 3.8px solid hsl(285deg, 91%, 52%);
+}
+
+.grid-col > .button-gray.theme3:hover {
+  background-color: hsl(290deg, 70%, 36%);
+}
+
+.grid-col > .button-red.theme3 {
+  background-color: hsl(176deg, 100%, 44%);
+  border-bottom: 3.8px solid hsl(177deg, 92%, 70%);
+}
+
+.grid-col > .button-red.theme3:hover {
+  background-color: hsl(177deg, 92%, 70%);
+}
+
+@media screen and (max-width: 590px) {
+  .display-calc {
+    margin: 0 auto;
+    margin-top: 75px;
+    width: 328px;
+    height: 421px;
+  }
+  .display-calc .title {
+    color: hsl(0deg, 0%, 100%);
+    font-size: 32px;
+  }
+  .table-grid {
+    background-color: hsl(223deg, 31%, 20%);
+    border-radius: 8px;
+    color: #fff;
+    margin-top: 20px;
+    padding: 25px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(5, 67px);
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+  }
+  .grid-col > input {
+    align-items: stretch;
+    background-color: hsl(30deg, 25%, 89%);
+    border: 0;
+    width: 60px;
+    height: 67px;
+    border-radius: 5px;
+    border-bottom: 3.8px solid hsl(35deg, 11%, 61%);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 50px;
+    color: hsl(221deg, 14%, 31%);
+    height: 100%;
+  }
+  .grid-col > input:active {
+    transform: translateY(4px);
+    border-bottom: 0;
+    height: 70px;
+  }
+}/*# sourceMappingURL=style.css.map */

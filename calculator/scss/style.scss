@@ -1,0 +1,322 @@
+@import '_variables';
+
+.column1 {  grid-column-start: 1; grid-column-end:3;}
+.column2 {  grid-column-start: 3; grid-column-end:5;}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $main-background;
+    padding: 0;
+    margin: 0;
+    font-family: 'League Spartan', sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+#display-text2 {
+    background-color: darkred;
+}
+
+.main-container {
+    .header {
+        margin: 0 auto;
+    }
+}
+
+.display-calc {
+    margin: 0 auto;
+    margin-top: 75px;
+    width: 428px;
+    height: 378px;
+    .title {
+        color: $white;
+        font-size: 32px;
+    }
+}
+
+.display-text, .display-text2 {
+    background-color: $screen-background;
+    border: 0;
+    border-radius: 8px;
+    width: 100%;
+    color: $white;
+    font-weight: 700;
+    text-align: right;
+    font-size: 4rem;
+    padding: 0 1.4rem;
+    padding-top: 10px;
+    // margin-top: 10px;
+    // line-height: 0;
+    // vertical-align: middle;
+    // overflow: hidden;
+}
+
+.display-text::placeholder, .display-text2::placeholder {
+    color: #fff;
+}
+
+.table-grid {
+    background-color: $toggle-background;
+    border-radius: 8px;
+    color: #fff;
+    margin-top: 20px;
+    padding: 25px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 84px);
+    grid-template-rows: repeat(5, 50px);
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 15px;
+}
+
+.grid-col {
+    width: auto;
+    height: 100%;
+}
+
+.grid-col > input {
+    align-items: stretch;
+    background-color: $light-grayish-orange-key;
+    border: 0;
+    width: 77px;
+    height: 53px;
+    border-radius: 7px;
+    border-bottom: 3.8px solid $grayish-orange-shadow-key;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 50px;
+    color: $color-text-1;
+    height: 100%;
+}
+
+.grid-col > input:hover {
+    background-color: $white;
+}
+
+.grid-col > input:active {
+    transform: translateY(4px);
+    border-bottom: 0;
+    height: 50px;
+}
+
+.grid-col > .button-gray {
+    background-color: $desaturated-dark-blue-key;
+    border-bottom: 3.8px solid $desaturated-dark-blue-key-shadow;
+}
+
+.grid-col > .button-gray:hover {
+    background-color: $desaturated-dark-blue-key-hover;
+}
+
+.grid-col > .button-red {
+    background-color: $red-key-background-toggle;
+    border-bottom: 3.8px solid $dark-red-key-shadow;
+}
+
+.grid-col > .button-red:hover {
+    background-color: $red-key-background-toggle-hover;
+}
+
+.input-check > input {
+    visibility: hidden;
+}
+
+// style toggle
+.container-toggle {
+    display: flex;
+    align-items: center;
+    color: $white;
+    position: relative;
+}
+
+.text-toggle {
+    text-transform: uppercase;
+    font-size: .6rem;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.active {
+    background-color: $red-key-background-toggle;
+}
+
+.tri-state-toggle {
+    // width: 53px;
+    width: 57px;
+    height: 21px;
+    background-color: $toggle-background;
+    border-radius: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 2px;
+}
+
+.button {
+    visibility: hidden;
+}
+
+.checkbox {
+    width: 27%;
+    height: 75%;
+    border-radius: 34px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center
+}
+
+.checkbox:hover {
+    background-color: $red-key-background-toggle-hover;
+}
+
+.checkbox > span {
+    position: absolute;
+    font-weight: bold;
+    top: 0;
+    font-size: .6rem;
+}
+
+// Theme-2
+body.theme2 {
+    background-color: $light-gray-main-background;
+}
+
+.display-text.theme2, .display-text2.theme2 {
+    background-color: $very-light-gray-screen-background;
+    color: $very-dark-grayish-yellow;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.display-text.theme2::placeholder, .display-text2.theme2::placeholder {
+    color: $very-dark-grayish-yellow;
+}
+
+.container-toggle.theme2,
+.title.theme2 {
+    color: $very-dark-grayish-yellow;
+}
+.table-grid.theme2 {
+    background-color: $grayish-red-toggle-background-keypad;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.tri-state-toggle.theme2 {
+    background-color: $grayish-red-toggle-background-keypad;
+}
+
+.checkbox.theme2 {
+    background-color: $dark-orange-key-shadow;
+}
+
+.grid-col > input.theme2 {
+    background-color: $light-grayish-yellow;
+    border-bottom: 3.8px solid $dark-grayish-orange;
+}
+
+.grid-col > input.theme2:hover {
+    background-color: $white;
+}
+
+.grid-col > input.theme2:active {
+    transform: translateY(4px);
+    border-bottom: 0;
+    height: 50px;
+}
+
+.grid-col > .button-gray.theme2 {
+    background-color: $dark-moderate-cyan-key-background;
+    border-bottom: 3.8px solid $very-dark-cyan-key-shadow;
+}
+
+.grid-col > .button-gray.theme2:hover {
+    background-color: $dark-moderate-cyan-key-background-hover;
+}
+
+.grid-col > .button-red.theme2 {
+    background-color: $orange-key-background-toggle;
+    border-bottom: 3.8px solid $dark-orange-key-shadow;
+}
+
+.grid-col > .button-red.theme2:hover {
+    background-color: $orange-key-background-toggle-hover;
+}
+
+// Theme-3
+body.theme3 {
+    background-color: $very-dark-violet-main-background;
+}
+
+.display-text.theme3, .display-text2.theme3 {
+    background-color: $very-dark-violet-toggle;
+    color: $light-yellow;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.display-text.theme3::placeholder, .display-text2.theme3::placeholder {
+    color: $light-yellow;
+}
+
+.container-toggle.theme3,
+.title.theme3 {
+    color: $light-yellow;
+}
+.table-grid.theme3 {
+    background-color: $very-dark-violet-toggle;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.tri-state-toggle.theme3 {
+    background-color: $very-dark-violet-toggle;
+}
+
+.active.theme3 {
+    background-color: $pure-cyan-key-background-toggle;
+}
+
+// .checkbox.theme3 {
+//     background-color: $dark-orange-key-shadow;
+// }
+
+.grid-col > input.theme3 {
+    background-color: #331B4D;
+    background-color: $very-dark-violet-key-background;
+    border-bottom: 3.8px solid $dark-magenta-key-shadow;
+    color: $light-yellow;
+}
+
+.grid-col > input.theme3:hover {
+    background-color: $dark-violet-key-background;
+}
+
+.grid-col > input.theme3:active {
+    transform: translateY(4px);
+    border-bottom: 0;
+    height: 50px;
+}
+
+.grid-col > .button-gray.theme3 {
+    background-color: $dark-violet-key-background;
+    border-bottom: 3.8px solid $vivid-magenta-key-shadow;
+}
+
+.grid-col > .button-gray.theme3:hover {
+    background-color: $dark-magenta-key-shadow;
+}
+
+.grid-col > .button-red.theme3 {
+    background-color: $pure-cyan-key-background-toggle;
+    border-bottom: 3.8px solid $soft-cyan-key-shadow;
+}
+
+.grid-col > .button-red.theme3:hover {
+    background-color: $soft-cyan-key-shadow;
+}
+
+@import '_mediaquery';

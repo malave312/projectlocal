@@ -1,0 +1,47 @@
+@media screen and (max-width: 590px) {
+    .display-calc {
+        margin: 0 auto;
+        margin-top: 75px;
+        width: 328px;
+        height: 421px;
+        .title {
+            color: $white;
+            font-size: 32px;
+        }
+    }
+    .table-grid {
+        background-color: $toggle-background;
+        border-radius: 8px;
+        color: #fff;
+        margin-top: 20px;
+        padding: 25px 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: repeat(5, 67px);
+        align-items: center;
+        justify-content: center;
+        row-gap: 20px;
+        column-gap: 15px;
+    }
+    .grid-col > input {
+        align-items: stretch;
+        background-color: $light-grayish-orange-key;
+        border: 0;
+        width: 60px;
+        height: 67px;
+        border-radius: 5px;
+        border-bottom: 3.8px solid $grayish-orange-shadow-key;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 50px;
+        color: $color-text-1;
+        height: 100%;
+    }
+    .grid-col > input:active {
+        transform: translateY(4px);
+        border-bottom: 0;
+        height: 70px;
+    }
+
+}

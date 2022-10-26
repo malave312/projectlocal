@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/normalize/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scss/style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header d-flex flex-row">
+            <div class="display-calc d-flex flex-column">
+                <div class="d-flex justify-content-between">
+                    <h1 class="title fw-bold">calc</h1>
+                    <div class="container-toggle">
+                        <span class="text-uppercase text-toggle">theme</span>
+                        <div class="tri-state-toggle">
+                            <div class="checkbox link-1 active">
+                                <span>1</span>
+                                <input class="button" type="radio" name="toggle" id="one" checked>
+                            </div>
+                            <div class="checkbox link-2">
+                                <span>2</span>
+                                <input class="button" type="radio" name="toggle" id="two">
+                            </div>
+                            <div class="checkbox link-3">
+                                <span>3</span>
+                                <input class="button" type="radio" name="toggle" id="three">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-display">
+                    <input type="text" class="display-text d-block" id="screen" disabled placeholder="0">
+                    <input type="text" class="display-text2 d-none" id="screen2" disabled>
+                </div>
+                <div class="table-grid">
+                    <div class="grid-col">
+                        <input type="button" value="7">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="8">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="9">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="del" class="fs-5 text-light button-gray">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="4">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="5">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="6">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="+" onclick="operation('+')">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="1">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="2">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="3">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="-" onclick="operation('-')">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value=".">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="0">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="/" onclick="operation('/')">
+                    </div>
+                    <div class="grid-col">
+                        <input type="button" value="x" onclick="operation('x')">
+                    </div>
+                    <div class="grid-col column1">
+                        <input type="button" value="reset" class="w-100 fs-5 text-light button-gray">
+                    </div>
+                    <div class="grid-col column2">
+                        <input type="button" value="=" class="w-100 text-light button-red" onclick="result()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/action.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
