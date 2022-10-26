@@ -1,0 +1,93 @@
+.main-container {
+    display: flex;
+    .section1 {
+        // background-color: $color-white;
+        // background-color: red;
+        width: 285px;
+        overflow: hidden;
+        .bar, .bar-section2, .bar-section3 {
+            display: flex;
+            flex-direction: column;
+            margin-right: 13px;
+            border-bottom: 1px solid $color-dark-gray-opacity-4;
+            padding-bottom: 10px;
+            button {
+                text-transform: capitalize;
+                padding-left: 30px;
+                text-align: left;
+                width: 100%;
+                height: 40px;
+                i {
+                    color: inherit;
+                }
+                span {
+                    font-weight: 600;
+                    letter-spacing: -1.2px;
+                }
+            }
+        }
+    }
+    .section2 {
+        cursor: pointer;
+        align-self: flex-start;
+        width: 100%;
+        height: 100vh;
+        background-color: $color-white-smoke;
+        display: grid;
+        grid-template-columns: repeat(4, 296px);
+        // grid-template-rows: repeat(1, 290px);
+        justify-content: space-between;
+        .container-card {
+            img {
+                width: 100%;
+                height: 169px;
+            }
+            .container-ob {
+                display: flex;
+                // align-items: center;
+                img {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                }
+                .content {
+                    margin-left: 10px;
+                    margin-right: 6px;
+                    // margin: 0 10px;
+                    .title {
+                        font-size: 1rem;
+                        font-weight: 700;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .user, .views {
+                        font-size: .8rem;
+                        font-weight: 600;
+                    }
+                    .user:hover {
+                        color: rgba(128,128,128, .8);
+                    }
+                }
+            }
+        }
+        h5 {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+// h6 {
+//     padding-left: 30px;
+//     color: rgb(109, 109, 109);
+// }
+.container-card {
+    .fa-ellipsis-vertical {
+        display: none;
+    }
+}
+.container-card:hover {
+    .fa-ellipsis-vertical {
+        display: block;
+    }
+}
