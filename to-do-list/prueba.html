@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .padre {
+        display: flex;
+        margin-top: 30px;
+    }
+    .prueba-1, .prueba-2, .prueba-3 {
+        width: 200px;
+        height: 200px;
+        margin-left: 10px;
+        border: 1px solid lime;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+    .prueba-1 {
+        background-color: blueviolet;
+    }
+    .prueba-2 {
+        background-color: darkblue;
+    }
+    .prueba-3 {
+        background-color: darkgoldenrod;
+    }
+    .block {
+        display: block;
+    }
+    .none {
+        display: none;
+    }
+    button {
+        width: 70px;
+        height: 70px;
+        border: 0;
+    }
+    .active {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="page">
+    <button class="page-link link-1 active">1</button>
+    <button class="page-link link-2">2</button>
+    <button class="page-link link-3">3</button>
+  </div>
+  <div class="padre">
+      <div class="prueba prueba-1 block">1</div>
+      <div class="prueba prueba-2 none">2</div>
+      <div class="prueba prueba-3 none">3</div>
+  </div>
+  <script>
+    /* Ejemplo de poner un condicional que diga si el div con el nombre prueba-1 tiene block entonces cambiarlo a none y de lo contrario si esta en none cambiarlo a block y asi con los otros de div */
+    const prueba = document.querySelector('.padre');
+    const caja = prueba.getElementsByClassName('prueba');
+
+    const
+        page = document.getElementById('page'),
+        btns = page.getElementsByClassName('page-link');
+        let p = 0;
+
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(e) {
+            const current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+
+            if (e.target.classList.contains('link-1')) {
+                document.querySelector('.prueba-1').classList.replace('none', 'block');
+                document.querySelector('.prueba-2').classList.replace('block', 'none');
+                document.querySelector('.prueba-3').classList.replace('block', 'none');
+            }
+            if (e.target.classList.contains('link-2')) {
+                document.querySelector('.prueba-2').classList.replace('none', 'block');
+                document.querySelector('.prueba-1').classList.replace('block', 'none');
+                document.querySelector('.prueba-3').classList.replace('block', 'none');
+            }
+            if (e.target.classList.contains('link-3')) {
+                document.querySelector('.prueba-3').classList.replace('none', 'block');
+                document.querySelector('.prueba-1').classList.replace('block', 'none');
+                document.querySelector('.prueba-2').classList.replace('block', 'none');
+            }
+        });
+    }
+      // for (let i = 0; i < padre.length; i++) {
+      //     if (padre[i].classList.contains('block')) {
+      //         console.log(i);
+      //     }
+      // }
+  </script>
+</body>
+</html>

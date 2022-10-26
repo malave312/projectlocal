@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>List</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+	<link rel="stylesheet" type="text/css" href="assets/normalize/normalize.css">
+	<link rel="stylesheet" type="text/css" href="scss/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  </head>
+  <body>
+	<div class="content">
+		<div class="div-header">
+			<h1 class="title">todo</h1>
+			<button class="modedark" id="mode"></button>
+		</div>
+		<div class="div-main">
+			<form class="search" id="form">
+				<div class="container-check check-all">
+					<button type="button" class="check-all-button" id="check-all"></button>
+				</div>
+				<input type="text" class="text" id="input-text" placeholder="Create a new todo..." autocomplete="off">
+			</form>
+		</div>
+		<div class="box" id="box">
+			<!-- Page 1 -> All -->
+			<div class="block" id="page-1">
+				<div class="container-list" id="list"></div>
+				<template id="template">
+					<div class="list">
+						<div class="section1">
+							<div class="border">
+								<button type="button" class="btncheck" id="btncheck"></button>
+							</div>
+							<p class="template-text" id="template-text"></p>
+						</div>
+						<!-- <div class="section2"> -->
+							<svg class="btnDelete" id="btnDelete" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="currentcolor" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
+						<!-- </div> -->
+					</div>
+				</template>
+			</div>
+			<!-- End Page 1 -->
+			<!-- Page 2 -> Active -->
+			<div class="none" id="page-2">
+				<div class="active-list" id="active-list"></div>
+				<template id="template-active">
+					<div class="container-active">
+						<div class="style-text" id="text-active"></div>
+						<svg class="btnDelete-active" id="btnDelete-active" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="currentcolor" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
+					</div>
+				</template>
+			</div>
+			<!-- End Page 2 -->
+			<!-- Page 3 -> Completed -->
+			<div class="none" id="page-3">
+				<div class="completed" id="completed"></div>
+				<template id="template-completed">
+					<div class="completed-container">
+						<p class="taskc" id="taskc"></p>
+					</div>
+				<!-- End Page 3 -->
+				</template>
+			</div>
+		</div>
+		<!-- Footer List  -->
+		<div class="none" id="footer-list">
+			<div class="list-footer">
+				<div class="light">
+					<span class="count-item"></span>
+					items left
+				</div>
+				<div id="page">
+					<button class="page-link link-1 active">all</button>
+					<button class="page-link link-2">active</button>
+					<button class="page-link link-3">completed</button>
+				</div>
+				<button type="button" class="btn-clean" id="clean">Clear completed</span>
+			</div>
+		</div>
+	</div>
+	<script src="js/index.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+@mixin icon {
+    cursor: pointer;
+    // font-size: 20px;
+    // border-radius: 50%;
+    padding: 8px;
+    // color: black;
+    text-decoration: none;
+    list-style: none;
+    color: initial;
+}
+
+@mixin ancla {
+    text-decoration: none;
+    list-style: none;
+    color: initial;
+}
+
+@import 'variables', 'header';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: #333;
+}
+
+.style-video {
+    position: relative;
+    svg:last-child {
+        position: absolute;
+        top: 17%;
+        left: 4%;
+        font-weight: bold;
+        // right: 0;
+        // bottom: 0;
+    }
+}
+
+a:hover {
+    color: initial;
+}

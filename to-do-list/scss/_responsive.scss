@@ -1,0 +1,14 @@
+@media screen and (max-width: 1150px) {
+    body {
+        background-image: url('../assets/images/bg-desktop-dark.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 250px;
+    }
+    .content {
+        width: 40vw;
+    }
+
+    .list, .completed-container, .container-active {
+        height: 50px;
+    }
+}

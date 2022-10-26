@@ -1,0 +1,129 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding: 0 25px;
+    background-color: $color-white;
+    height: 58px;
+    border-bottom: 1px solid $color-gray-opacity-6;
+    &-section1 {
+        display: flex;
+        align-items: center;
+        i {
+            @include icon;
+        }
+        &-container {
+            display: flex;
+            align-items: center;
+            @include ancla;
+            i {
+                @include icon;
+                color: $color-red;
+
+            }
+            span {
+                letter-spacing: -1.5px;
+                font-family: 'Oswald', sans-serif;
+                margin-left: -6px;
+                font-weight: 500;
+            }
+        }
+    }
+    &-section2 {
+        display: flex;
+        align-items: center;
+        width: 612px;
+        height: 40px;
+        &-container {
+            width: 100%;
+            height: 100%;
+            background-color: $color-white;
+            display: flex;
+            align-items: center;
+            &-search {
+                width: 100%;
+                height: 100%;
+                padding-top: 7px;
+                padding-bottom: 7px;
+                padding-left: 10px;
+                border: 1px solid $color-light-gray;
+                border-top-left-radius: 2px;
+                border-bottom-left-radius: 2px;
+            }
+            &-search:focus {
+                outline: 1.5px solid $color-blue;
+                box-shadow: 0 1px 2px 0 $color-black-opacity-5;
+            }
+            &-search::placeholder {
+                color: $color-gray;
+                font-weight: 500;
+            }
+            button {
+                padding: 0;
+                margin: 0;
+                background-color: $color-white-smoke;
+                width: 67px;
+                height: 40px;
+                border: 1px solid $color-light-gray;
+                border-left: none;
+                border-top-right-radius: 2px;
+                border-bottom-right-radius: 2px;
+                transition: .1s;
+                .fa-magnifying-glass {
+                    text-align: center;
+                    color: rgb(79, 79, 79);
+                }
+            }
+            button:hover {
+                background-color: $color-dark-gray-opacity-6;
+            }
+            button:focus {
+                background-color: $color-dark-gray-opacity-6;
+            }
+        }
+        .fa-microphone {
+            background-color: rgba(239, 239, 239, .5);
+            border-radius: 50%;
+            margin-left: 9px;
+            padding: 12px;
+            cursor: pointer;
+        }
+        span {
+            // background-color:lime;
+            border: 1px solid red;
+        }
+        
+    }
+    &-section3 {
+        display: flex;
+        align-items: center;
+        position: relative;
+        .style-video {
+            svg {
+                @include icon;
+            }
+            svg:last-child {
+                top: 10%;
+                left: 2%;
+                position: absolute;
+                font-weight: bold;
+            }
+        }
+        .fa-bell {
+            @include icon;
+        }
+        .profile {
+            cursor: pointer;
+            img{
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+.active-circle:active {
+    padding: 8px;
+    background-color: rgb(239,239,240, .1);
+}
