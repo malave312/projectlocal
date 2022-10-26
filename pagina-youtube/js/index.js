@@ -11,19 +11,22 @@ const
     btns = document.getElementsByClassName('link'),
     icon = document.querySelectorAll('.link > i');
     let p = 0;
-// console.log(btns);
-// const arrayVideos = {};
 
 document.addEventListener('DOMContentLoaded', (e) => {
     callApi();
 });
 
 inputSearch.addEventListener('focusin', function (e) {
-    inputSearch.style.backgroundColor = 'red';
+    document.querySelector('.navbar-section2-container').style.outline = '1px solid red';
+    document.querySelector('.bi-search').classList.remove('invisible');
 });
 
 inputSearch.addEventListener('focusout', function (e) {
-    inputSearch.style.backgroundColor = 'black';
+    document.querySelector('.navbar-section2-container.navbar-section2-container').style.outline = '0';
+    document.querySelector('.bi-search').classList.add('invisible');
+    console.log('hola');
+    // document.querySelector('.bi-search').classList.replace('invisible', 'visible');
+
 });
 
 const callApi = async () => {
