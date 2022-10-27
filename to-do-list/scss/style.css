@@ -77,18 +77,6 @@
   outline: 2px solid hsl(234deg, 11%, 52%);
 }
 
-.text-light::-moz-placeholder {
-  color: hsl(234deg, 11%, 52%);
-  font-size: 0.9rem;
-  font-weight: bold;
-}
-
-.text-light:-ms-input-placeholder {
-  color: hsl(234deg, 11%, 52%);
-  font-size: 0.9rem;
-  font-weight: bold;
-}
-
 .text-light::placeholder {
   color: hsl(234deg, 11%, 52%);
   font-size: 0.9rem;
@@ -185,6 +173,7 @@
 }
 
 .check-all:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, hsl(280deg, 87%, 65%)), color-stop(0.67, hsl(192deg, 100%, 67%)));
   background-image: -moz-linear-gradient(center bottom, hsl(280deg, 87%, 65%), hsl(280deg, 87%, 65%));
 }
 
@@ -199,6 +188,7 @@
 }
 
 .border:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33, hsl(280deg, 87%, 65%)), color-stop(0.67, hsl(192deg, 100%, 67%)));
   background-image: -moz-linear-gradient(center bottom, hsl(280deg, 87%, 65%), hsl(280deg, 87%, 65%));
 }
 
@@ -312,14 +302,6 @@ body {
 }
 .div-main .text:focus {
   outline: 2px solid hsl(234deg, 11%, 52%);
-}
-.div-main .text::-moz-placeholder {
-  color: hsl(233deg, 11%, 84%);
-  font-size: 0.9rem;
-}
-.div-main .text:-ms-input-placeholder {
-  color: hsl(233deg, 11%, 84%);
-  font-size: 0.9rem;
 }
 .div-main .text::placeholder {
   color: hsl(233deg, 11%, 84%);

@@ -1,73 +1,123 @@
-const
-    containerVideo = document.getElementById('container-video'),
-    template = document.getElementById('template').content,
+const containerVideo = document.getElementById("container-video"),
+    template = document.getElementById("template").content,
     fragment = document.createDocumentFragment(),
-    cards = document.getElementById('container-card'),
-    cardsHover = document.querySelectorAll('.container-card');
+    cards = document.getElementById("container-card"),
+    cardsHover = document.querySelectorAll(".container-card");
 
-const inputSearch = document.getElementById('input-search');
+const inputSearch = document.getElementById("input-search");
+const btnClear = document.getElementById("clear");
+const form = document.querySelector("form");
 
-const
-    btns = document.getElementsByClassName('link'),
-    icon = document.querySelectorAll('.link > i');
-    let p = 0;
+const btns = document.getElementsByClassName("link"),
+    icon = document.querySelectorAll(".link > i");
+let p = 0;
 
-document.addEventListener('DOMContentLoaded', (e) => {
+document.addEventListener("DOMContentLoaded", (e) => {
     callApi();
 });
 
-inputSearch.addEventListener('focusin', function (e) {
-    document.querySelector('.navbar-section2-container').style.outline = '1px solid red';
-    document.querySelector('.bi-search').classList.remove('invisible');
+inputSearch.addEventListener("input", function (e) {
+    e.preventDefault();
+    e.target.value.length >= 1
+        ? document.querySelector(".clear").classList.remove("d-none")
+        : document.querySelector(".clear").classList.add("d-none");
 });
 
-inputSearch.addEventListener('focusout', function (e) {
-    document.querySelector('.navbar-section2-container.navbar-section2-container').style.outline = '0';
-    document.querySelector('.bi-search').classList.add('invisible');
-    console.log('hola');
-    // document.querySelector('.bi-search').classList.replace('invisible', 'visible');
+btnClear.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector("form").reset();
+    document.querySelector(".clear").classList.add("d-none");
+});
 
+inputSearch.addEventListener("focusin", function (e) {
+    document
+        .querySelector(".navbar-section2-container-action")
+        .classList.add("style-input");
+    document.querySelector(".bi-search").classList.remove("invisible");
+    document
+        .querySelector(".navbar-section2-container-action-search")
+        .classList.remove("border-rounded");
+});
+
+inputSearch.addEventListener("focusout", function (e) {
+    document.querySelector(".navbar-section2-container-action").style.outline =
+        // "0";
+        document
+            .querySelector(".navbar-section2-container-action-search")
+            .classList.remove("style-input");
+
+    document
+        .querySelector(".navbar-section2-container-action")
+        .classList.remove("style-input");
+    document.querySelector(".bi-search").classList.add("invisible");
+    document
+        .querySelector(".navbar-section2-container-action-search")
+        .classList.add("border-rounded");
+    // document.querySelector('.clear').classList.add('d-none');
+    // document.querySelector('.bi-search').classList.remove('border-rounded');
+    // document.querySelector('.bi-search').classList.replace('invisible', 'visible');
 });
 
 const callApi = async () => {
     try {
-        const apiKey = '23543280-ab1316dfc9ab1ef53517801e4';
-        const api = await fetch(`https://pixabay.com/api/?key=${apiKey}&q=yellow+flowers&image_type=photo&pretty=true`);
+        const apiKey = "23543280-ab1316dfc9ab1ef53517801e4";
+        const api = await fetch(
+            `https://pixabay.com/api/?key=${apiKey}&q=yellow+flowers&image_type=photo&pretty=true`
+        );
         const result = await api.json();
         getVideo(result.hits);
-    }
-    catch(error) {
+    } catch (error) {
         console.log(error);
     }
-}
+};
 
 const getVideo = (resultVideo) => {
     for (let i = 0; i < resultVideo.length; i++) {
-        const {largeImageURL,  userImageURL, user, views, published } = resultVideo[i];
+        const { largeImageURL, userImageURL, user, views, published } =
+            resultVideo[i];
         const clone = template.cloneNode(true);
-        clone.querySelector('.image').setAttribute('src', `${largeImageURL}`);
-        clone.querySelector('.user-img').setAttribute('src', `${userImageURL}`);
-        clone.querySelector('.user').textContent = user;
-        clone.querySelector('.views').textContent = views + ' visualizaciones';
+        clone.querySelector(".image").setAttribute("src", `${largeImageURL}`);
+        clone.querySelector(".user-img").setAttribute("src", `${userImageURL}`);
+        clone.querySelector(".user").textContent = user;
+        clone.querySelector(".views").textContent = views + " visualizaciones";
         if (i >= 4) {
-            clone.querySelector('.container-card').style.marginTop = '40px';
+            clone.querySelector(".container-card").style.marginTop = "40px";
         }
         fragment.appendChild(clone);
     }
     cards.appendChild(fragment);
-}
+    //     const playVideoOnImage = document.getElementById('image');
+    // playVideoOnImage.addEventListener('mouseover', function (e) {
+    //     setTimeout(function(){
+    //         console.log("Hola Mundo");
+    //     }, 1000);
+    // });
+};
 
 for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function (e) {
-        const current = document.getElementsByClassName('active');
+    btns[i].addEventListener("click", function (e) {
+        const current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
 
-        if (icon[i].classList[1].indexOf('-fill') == -1) {
-            document.querySelector(`.${icon[i].dataset.icon}`).classList.replace(icon[i].dataset.icon, `${icon[i].dataset.icon}-fill`);
+        if (icon[i].classList[1].indexOf("-fill") == -1) {
+            document
+                .querySelector(`.${icon[i].dataset.icon}`)
+                .classList.replace(
+                    icon[i].dataset.icon,
+                    `${icon[i].dataset.icon}-fill`
+                );
             for (let i = 0; i < icon.length; i++) {
-                if (btns[i].classList.contains('active') == false && icon[i].attributes.class.nodeValue.indexOf('-fill') > -1) {
-                    document.querySelector(`.${icon[i].dataset.icon}-fill`).classList.replace(`${icon[i].dataset.icon}-fill`, icon[i].dataset.icon);
+                if (
+                    btns[i].classList.contains("active") == false &&
+                    icon[i].attributes.class.nodeValue.indexOf("-fill") > -1
+                ) {
+                    document
+                        .querySelector(`.${icon[i].dataset.icon}-fill`)
+                        .classList.replace(
+                            `${icon[i].dataset.icon}-fill`,
+                            icon[i].dataset.icon
+                        );
                 }
             }
         }

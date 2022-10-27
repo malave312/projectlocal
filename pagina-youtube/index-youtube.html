@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Normalize -->
     <link rel="stylesheet" href="assets/normalize/normalize.css">
-    <link rel="shortcut icon" href="youtube.svg" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="youtube.svg" type="image/x-icon"> -->
     <!-- font-awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css" integrity="sha512-+oRH6u1nDGSm3hH8poU85YFIVTdSnS2f+texdPGrURaJh8hzmhMiZrQth6l56P4ZQmxeZzd2DqVEMqQoJ8J89A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -37,14 +37,13 @@
         </div>
         <div class="navbar-section2">
             <div class="navbar-section2-container">
-                <div class="navbar-section2-container-action">
+                <form class="navbar-section2-container-action border-rounded">
                     <i class="bi bi-search invisible"></i>
-                    <input type="text" class="navbar-section2-container-action-search" placeholder="Buscar" id="input-search" data-prueba="true">
-                </div>
-                <!-- <div class="input-group mb-3 h-100" aria-describedby="basic-addon1">
-                    <span class="input-group-text d-none" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" >
-                </div> -->
+                    <input type="text" class="navbar-section2-container-action-search border-rounded" placeholder="Buscar" id="input-search" data-prueba="true">
+                    <button type="button" class="clear d-none" id="clear">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </form>
                 <button type="button">
                     <i class="fa-solid fa-magnifying-glass fs-6"></i>
                 </button>
@@ -77,55 +76,57 @@
             <div class="bar">
                 <button type="button" class="link active">
                     <i class="bi bi-house-door-fill fs-5" data-icon="bi-house-door"></i>
-                    <span class="ms-3">inicio</span>
+                    <span class="ms-4">inicio</span>
                 </button>
                 <button type="button" class="link">
                     <i class="bi bi-file-play fs-5" data-icon="bi-file-play"></i>
-                    <span class="ms-3">shorts</span>
+                    <span class="ms-4">shorts</span>
                 </button>
                 <button type="button" class="link">
                     <i class="bi bi-collection-play fs-5" data-icon="bi-collection-play"></i>
-                    <span class="ms-3">suscripciones</span>
+                    <span class="ms-4">suscripciones</span>
                 </button>
             </div>
             <div class="bar-section2">
                 <button type="button" class="link">
                     <i class="bi bi-collection fs-5" data-icon="bi-collection"></i>
-                    <span class="ms-3">biblioteca</span>
+                    <span class="ms-4">biblioteca</span>
                 </button>
                 <button type="button" class="link">
                     <i class="bi bi-clock fs-5" data-icon="bi-clock"></i>
-                    <span class="ms-3">historial</span>
+                    <span class="ms-4">historial</span>
                 </button>
             </div>
             <div class="bar-section3">
-                <h6 class="fw-bold text-uppercase mt-3">explorar</h6>
+                <h6 class="mt-3 subtitle">explorar</h6>
                 <button type="button" class="link">
                     <i class="bi bi-lightning-charge fs-5" data-icon="bi-lightning-charge"></i>
-                    <span class="ms-3">tendencia</span>
+                    <span class="ms-4">tendencia</span>
                 </button>
                 <button type="button" class="link">
                     <i class="bi bi-file-music fs-5" data-icon="bi-file-music"></i>
-                    <span class="ms-3">música</span>
+                    <span class="ms-4">música</span>
                 </button>
                 <button type="button" class="link">
                     <i class="bi bi-dice-3 fs-5" data-icon="bi-dice-3"></i>
-                    <span class="ms-3">juegos</span>
+                    <span class="ms-4">juegos</span>
                 </button>
                 <button type="button" class="link">
                     <i class="bi bi-trophy fs-5" data-icon="bi-trophy"></i>
-                    <span class="ms-3">deportes</span>
+                    <span class="ms-4">deportes</span>
                 </button>
                 <button type="button" class="link">
                     <i class="bi bi-lightbulb fs-5" data-icon="bi-lightbulb"></i>
-                    <span class="ms-3">aprendizaje</span>
+                    <span class="ms-4">aprendizaje</span>
                 </button>
             </div>
         </div>
         <div class="section2 p-4" id="container-card"></div>
         <template id="template">
             <div class="container-card">
-                <img src="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg" class="image w-100" alt="">
+                <div class="container-card-img" id="image">
+                    <img src="https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg" class="image w-100" alt="">
+                </div>
                 <div class="container-ob mt-2">
                     <img src="https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg" class="user-img" alt="">
                     <div class="content w-100">

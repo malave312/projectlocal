@@ -1,29 +1,55 @@
+@mixin bar-section {
+    display: flex;
+    flex-direction: column;
+    margin-right: 13px;
+    border-bottom: 1px solid $color-dark-gray-opacity-4;
+    padding-bottom: 10px;
+}
+
+@mixin button-link {
+    text-transform: capitalize;
+    margin-left: 10px;
+    padding-left: 15px;
+    text-align: left;
+    width: 100%;
+    height: 40px;
+    i {
+        color: inherit;
+    }
+    span {
+        font-weight: 600;
+        letter-spacing: -1.2px;
+    }
+}
+
 .main-container {
     display: flex;
     .section1 {
-        // background-color: $color-white;
-        // background-color: red;
         width: 285px;
         overflow: hidden;
-        .bar, .bar-section2, .bar-section3 {
-            display: flex;
-            flex-direction: column;
-            margin-right: 13px;
-            border-bottom: 1px solid $color-dark-gray-opacity-4;
-            padding-bottom: 10px;
-            button {
-                text-transform: capitalize;
+        padding-top: 10px;
+        .bar {
+            @include bar-section;
+            .link {
+                @include button-link;
+            }
+        }
+        .bar-section2 {
+            @include bar-section;
+            .link {
+                @include button-link;
+            }
+        }
+        .bar-section3 {
+            @include bar-section;
+            .link {
+                @include button-link;
+            }
+            .subtitle {
+                text-transform: uppercase;
+                font-weight: bold;
                 padding-left: 30px;
-                text-align: left;
-                width: 100%;
-                height: 40px;
-                i {
-                    color: inherit;
-                }
-                span {
-                    font-weight: 600;
-                    letter-spacing: -1.2px;
-                }
+                color: rgb(109, 109, 109);
             }
         }
     }
@@ -35,16 +61,18 @@
         background-color: $color-white-smoke;
         display: grid;
         grid-template-columns: repeat(4, 296px);
-        // grid-template-rows: repeat(1, 290px);
         justify-content: space-between;
         .container-card {
-            img {
-                width: 100%;
-                height: 169px;
+            &-img {
+                border-radius: 12px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 169px;
+                }
             }
             .container-ob {
                 display: flex;
-                // align-items: center;
                 img {
                     width: 35px;
                     height: 35px;
@@ -53,19 +81,19 @@
                 .content {
                     margin-left: 10px;
                     margin-right: 6px;
-                    // margin: 0 10px;
                     .title {
                         font-size: 1rem;
                         font-weight: 700;
                         display: flex;
                         justify-content: space-between;
                     }
-                    .user, .views {
-                        font-size: .8rem;
+                    .user,
+                    .views {
+                        font-size: 0.8rem;
                         font-weight: 600;
                     }
                     .user:hover {
-                        color: rgba(128,128,128, .8);
+                        color: rgba(128, 128, 128, 0.8);
                     }
                 }
             }
@@ -77,10 +105,6 @@
     }
 }
 
-// h6 {
-//     padding-left: 30px;
-//     color: rgb(109, 109, 109);
-// }
 .container-card {
     .fa-ellipsis-vertical {
         display: none;

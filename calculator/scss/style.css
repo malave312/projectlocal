@@ -55,14 +55,6 @@ p {
   padding-top: 10px;
 }
 
-.display-text::-moz-placeholder, .display-text2::-moz-placeholder {
-  color: #fff;
-}
-
-.display-text:-ms-input-placeholder, .display-text2:-ms-input-placeholder {
-  color: #fff;
-}
-
 .display-text::placeholder, .display-text2::placeholder {
   color: #fff;
 }
@@ -79,8 +71,7 @@ p {
   align-items: center;
   justify-content: center;
   row-gap: 20px;
-  -moz-column-gap: 15px;
-       column-gap: 15px;
+  column-gap: 15px;
 }
 
 .grid-col {
@@ -199,14 +190,6 @@ body.theme2 {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
-.display-text.theme2::-moz-placeholder, .display-text2.theme2::-moz-placeholder {
-  color: hsl(60deg, 10%, 19%);
-}
-
-.display-text.theme2:-ms-input-placeholder, .display-text2.theme2:-ms-input-placeholder {
-  color: hsl(60deg, 10%, 19%);
-}
-
 .display-text.theme2::placeholder, .display-text2.theme2::placeholder {
   color: hsl(60deg, 10%, 19%);
 }
@@ -270,14 +253,6 @@ body.theme3 {
   background-color: hsl(268deg, 71%, 12%);
   color: hsl(52deg, 100%, 62%);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-}
-
-.display-text.theme3::-moz-placeholder, .display-text2.theme3::-moz-placeholder {
-  color: hsl(52deg, 100%, 62%);
-}
-
-.display-text.theme3:-ms-input-placeholder, .display-text2.theme3:-ms-input-placeholder {
-  color: hsl(52deg, 100%, 62%);
 }
 
 .display-text.theme3::placeholder, .display-text2.theme3::placeholder {
@@ -360,8 +335,7 @@ body.theme3 {
     align-items: center;
     justify-content: center;
     row-gap: 20px;
-    -moz-column-gap: 15px;
-         column-gap: 15px;
+    column-gap: 15px;
   }
   .grid-col > input {
     align-items: stretch;

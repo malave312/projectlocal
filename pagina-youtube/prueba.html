@@ -1,21 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        svg {
-            background-color: black;
-            border-radius: 50%;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-1-circle" viewBox="0 0 16 16">
-        <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>
-    </svg>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <style>
+            body {
+                background-color: #333;
+                display: grid;
+                grid-template-columns: repeat(3, 300px);
+                justify-content: center;
+                /* position: absolute; */
+            }
+            .card {
+                width: 18rem;
+                height: 75%;
+                overflow: hidden;
+                transition-delay: 0s;
+            }
+            .card:hover {
+                z-index: 1;
+                transition: .3s;
+                transform: scale(1.2);
+                width: 21rem;
+                height: 90%;
+                transition-delay: 1s;
+            }
+            .card-scale {
+                /* position: relative; */
+                z-index: 1;
+                transform: scale(1.2);
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body class="pt-5">
+        <div class="card">
+            <img
+                src="assets/image/jg_gj_logo_design.webp"
+                class="card-img-top"
+                alt="..."
+                id="prueba"
+            />
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card">
+            <img
+                src="assets/image/jg_gj_logo_design.webp"
+                class="card-img-top"
+                alt="..."
+            />
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card">
+            <img
+                src="assets/image/jg_gj_logo_design.webp"
+                class="card-img-top"
+                alt="..."
+            />
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </body>
+    <script>
+        // const card = document.getElementById("prueba");
+        // card.addEventListener("mouseover", function (e) {
+        //     setTimeout(function () {
+        //         document.querySelectorAll('.card').classList.add('card-scale');
+        //         document.querySelectorAll('.card').classList.remove('overflow-hidden');
+        //     }, 1000);
+        // });
+        // card.addEventListener("mouseout", function (e) {
+        //         document.querySelector('.card').classList.remove('card-scale');
+        //         document.querySelector('.card').classList.add('overflow-hidden');
+        // });
+    </script>
 </html>
