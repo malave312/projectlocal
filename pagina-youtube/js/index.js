@@ -2,7 +2,8 @@ const containerVideo = document.getElementById("container-video"),
     template = document.getElementById("template").content,
     fragment = document.createDocumentFragment(),
     cards = document.getElementById("container-card"),
-    cardsHover = document.querySelectorAll(".container-card");
+    section2 = document.querySelector(".main-container > .section2");
+cardsHover = document.querySelectorAll(".container-card");
 
 const inputSearch = document.getElementById("input-search");
 const btnClear = document.getElementById("clear");
@@ -26,6 +27,7 @@ inputSearch.addEventListener("input", function (e) {
 btnClear.addEventListener("click", function (e) {
     e.preventDefault();
     document.querySelector("form").reset();
+    inputSearch.focus();
     document.querySelector(".clear").classList.add("d-none");
 });
 
@@ -40,11 +42,11 @@ inputSearch.addEventListener("focusin", function (e) {
 });
 
 inputSearch.addEventListener("focusout", function (e) {
-    document.querySelector(".navbar-section2-container-action").style.outline =
-        // "0";
-        document
-            .querySelector(".navbar-section2-container-action-search")
-            .classList.remove("style-input");
+    // document.querySelector(".navbar-section2-container-action").style.outline =
+    // "0";
+    document
+        .querySelector(".navbar-section2-container-action-search")
+        .classList.remove("style-input");
 
     document
         .querySelector(".navbar-section2-container-action")
@@ -80,18 +82,12 @@ const getVideo = (resultVideo) => {
         clone.querySelector(".user-img").setAttribute("src", `${userImageURL}`);
         clone.querySelector(".user").textContent = user;
         clone.querySelector(".views").textContent = views + " visualizaciones";
-        if (i >= 4) {
-            clone.querySelector(".container-card").style.marginTop = "40px";
-        }
         fragment.appendChild(clone);
     }
     cards.appendChild(fragment);
-    //     const playVideoOnImage = document.getElementById('image');
-    // playVideoOnImage.addEventListener('mouseover', function (e) {
-    //     setTimeout(function(){
-    //         console.log("Hola Mundo");
-    //     }, 1000);
-    // });
+    section2.style.gridTemplateRows = `repeat(${
+        resultVideo.length / 4
+    }, 286px)`;
 };
 
 for (let i = 0; i < btns.length; i++) {

@@ -17,27 +17,30 @@
                 display: grid;
                 grid-template-columns: repeat(3, 300px);
                 justify-content: center;
-                /* position: absolute; */
             }
             .card {
                 width: 18rem;
-                height: 75%;
+                height: 307px;
                 overflow: hidden;
                 transition-delay: 0s;
             }
+            img {
+                width: 100px;
+                height: 169px;
+            }
             .card:hover {
-                z-index: 1;
+                z-index: 2;
                 transition: .3s;
                 transform: scale(1.2);
-                width: 21rem;
-                height: 90%;
+                width: 20rem;
+                height: 350px;
                 transition-delay: 1s;
             }
             .card-scale {
                 /* position: relative; */
                 z-index: 1;
-                transform: scale(1.2);
-                height: 100%;
+                transform: scale(1.1);
+                height: 330px;
             }
         </style>
     </head>

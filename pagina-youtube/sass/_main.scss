@@ -1,7 +1,6 @@
 @mixin bar-section {
     display: flex;
     flex-direction: column;
-    margin-right: 13px;
     border-bottom: 1px solid $color-dark-gray-opacity-4;
     padding-bottom: 10px;
 }
@@ -28,23 +27,16 @@
         width: 285px;
         overflow: hidden;
         padding-top: 10px;
-        .bar {
-            @include bar-section;
-            .link {
-                @include button-link;
-            }
-        }
-        .bar-section2 {
+        padding-right: 27px;
+        .bar,
+        .bar-section2,
+        .bar-section3 {
             @include bar-section;
             .link {
                 @include button-link;
             }
         }
         .bar-section3 {
-            @include bar-section;
-            .link {
-                @include button-link;
-            }
             .subtitle {
                 text-transform: uppercase;
                 font-weight: bold;
@@ -55,16 +47,24 @@
     }
     .section2 {
         cursor: pointer;
-        align-self: flex-start;
         width: 100%;
-        height: 100vh;
         background-color: $color-white-smoke;
         display: grid;
         grid-template-columns: repeat(4, 296px);
         justify-content: space-between;
+        overflow-x: hidden;
         .container-card {
+            border-radius: 8px;
+            width: 296px;
+            height: 246px;
+            overflow: hidden;
+            transition: all 0.1s ease;
+            transition-delay: 100ms;
+            .fa-ellipsis-vertical {
+                display: none;
+            }
             &-img {
-                border-radius: 12px;
+                border-radius: 8px;
                 overflow: hidden;
                 img {
                     width: 100%;
@@ -73,6 +73,7 @@
             }
             .container-ob {
                 display: flex;
+                margin: 0;
                 img {
                     width: 35px;
                     height: 35px;
@@ -87,6 +88,9 @@
                         display: flex;
                         justify-content: space-between;
                     }
+                    .title:hover {
+                        color: $color-blue;
+                    }
                     .user,
                     .views {
                         font-size: 0.8rem;
@@ -97,21 +101,56 @@
                     }
                 }
             }
+            .container-button-hover {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                button {
+                    overflow: visible;
+                    background-color: $color-gray-opacity-3;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-transform: capitalize;
+                    font-weight: 600;
+                    border-radius: 20px;
+                    width: 96%;
+                    height: 30px;
+                    font-size: 1rem;
+                }
+                button:hover {
+                    background-color: $color-gray;
+                }
+            }
+        }
+        .container-card:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px 0px, rgba(0, 0, 0, 0.22) 0px 10px 10px 0px;
+            background-color: $color-white;
+            z-index: 50;
+            transform: scale(1.1);
+            width: 302px;
+            height: 327px;
+            transition: all 0.2s ease;
+            transition-delay: 1s;
+            .container-ob {
+                transition: 0.1s;
+                transition-delay: 1s;
+                margin: 0 10px;
+                .content {
+                    .title {
+                        transition: 0.1s;
+                        transition-delay: 1s;
+                        font-size: 0.95rem;
+                    }
+                }
+            }
+            .fa-ellipsis-vertical {
+                display: block;
+            }
         }
         h5 {
             display: flex;
             justify-content: space-between;
         }
-    }
-}
-
-.container-card {
-    .fa-ellipsis-vertical {
-        display: none;
-    }
-}
-.container-card:hover {
-    .fa-ellipsis-vertical {
-        display: block;
     }
 }
