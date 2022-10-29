@@ -79,9 +79,11 @@ const getVideo = (resultVideo) => {
             resultVideo[i];
         const clone = template.cloneNode(true);
         clone.querySelector(".image").setAttribute("src", `${largeImageURL}`);
+        clone.querySelector('.image').setAttribute("alt", `prueba${i}`)
         clone.querySelector(".user-img").setAttribute("src", `${userImageURL}`);
+        clone.querySelector(".user-img").setAttribute("alt", `prueba${i}`);
         clone.querySelector(".user").textContent = user;
-        clone.querySelector(".views").textContent = views + " visualizaciones";
+        clone.querySelector(".views").textContent = `${views} visualizaciones • hace ${i} horas`;
         fragment.appendChild(clone);
     }
     cards.appendChild(fragment);

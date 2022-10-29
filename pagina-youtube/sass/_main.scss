@@ -1,3 +1,13 @@
+@mixin delay($opcion: true) {
+    @if $opcion {
+        transition: all 0.2s ease;
+        transition-delay: 1s;
+    } @else {
+        transition: all 0.1s ease;
+        transition-delay: 100ms;
+    }
+}
+
 @mixin bar-section {
     display: flex;
     flex-direction: column;
@@ -58,14 +68,14 @@
             width: 296px;
             height: 246px;
             overflow: hidden;
-            transition: all 0.1s ease;
-            transition-delay: 100ms;
+            @include delay($opcion: false);
             .fa-ellipsis-vertical {
                 display: none;
             }
             &-img {
                 border-radius: 8px;
                 overflow: hidden;
+                @include delay($opcion: false);
                 img {
                     width: 100%;
                     height: 169px;
@@ -74,15 +84,19 @@
             .container-ob {
                 display: flex;
                 margin: 0;
+                @include delay($opcion: false);
                 img {
+                    @include delay($opcion: false);
                     width: 35px;
                     height: 35px;
                     border-radius: 50%;
                 }
                 .content {
+                    @include delay($opcion: false);
                     margin-left: 10px;
                     margin-right: 6px;
                     .title {
+                        @include delay($opcion: false);
                         font-size: 1rem;
                         font-weight: 700;
                         display: flex;
@@ -107,40 +121,45 @@
                 align-items: center;
                 button {
                     overflow: visible;
-                    background-color: $color-gray-opacity-3;
+                    background-color: $color-white-ah;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    text-transform: capitalize;
                     font-weight: 600;
                     border-radius: 20px;
                     width: 96%;
                     height: 30px;
-                    font-size: 1rem;
+                    font-size: 0.95rem;
                 }
                 button:hover {
-                    background-color: $color-gray;
+                    background-color: $color-dark-white;
                 }
             }
         }
         .container-card:hover {
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px 0px, rgba(0, 0, 0, 0.22) 0px 10px 10px 0px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px 0px,
+                rgba(0, 0, 0, 0.22) 0px 10px 10px 0px;
             background-color: $color-white;
             z-index: 50;
             transform: scale(1.1);
             width: 302px;
-            height: 327px;
-            transition: all 0.2s ease;
-            transition-delay: 1s;
+            height: 320px;
+            @include delay($opcion: true);
             .container-ob {
-                transition: 0.1s;
-                transition-delay: 1s;
+                @include delay($opcion: true);
                 margin: 0 10px;
                 .content {
                     .title {
-                        transition: 0.1s;
-                        transition-delay: 1s;
+                        @include delay($opcion: true);
                         font-size: 0.95rem;
+                    }
+                    .user {
+                        @include delay($opcion: true);
+                        font-size: 0.63rem;
+                    }
+                    .views {
+                        @include delay($opcion: true);
+                        font-size: 0.7rem;
                     }
                 }
             }

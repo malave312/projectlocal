@@ -82,9 +82,11 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
+  background-color: inherit;
+  outline: none;
 }
 .navbar-section2-container-action .clear:hover {
-  background-color: rgba(158, 158, 158, 0.2);
+  background-color: rgba(239, 239, 239, 0.6);
 }
 .navbar-section2-container button {
   padding: 0;
@@ -245,6 +247,8 @@
 .main-container .section2 .container-card-img {
   border-radius: 8px;
   overflow: hidden;
+  transition: all 0.1s ease;
+  transition-delay: 100ms;
 }
 .main-container .section2 .container-card-img img {
   width: 100%;
@@ -253,17 +257,25 @@
 .main-container .section2 .container-card .container-ob {
   display: flex;
   margin: 0;
+  transition: all 0.1s ease;
+  transition-delay: 100ms;
 }
 .main-container .section2 .container-card .container-ob img {
+  transition: all 0.1s ease;
+  transition-delay: 100ms;
   width: 35px;
   height: 35px;
   border-radius: 50%;
 }
 .main-container .section2 .container-card .container-ob .content {
+  transition: all 0.1s ease;
+  transition-delay: 100ms;
   margin-left: 10px;
   margin-right: 6px;
 }
 .main-container .section2 .container-card .container-ob .content .title {
+  transition: all 0.1s ease;
+  transition-delay: 100ms;
   font-size: 1rem;
   font-weight: 700;
   display: flex;
@@ -287,19 +299,18 @@
 }
 .main-container .section2 .container-card .container-button-hover button {
   overflow: visible;
-  background-color: rgba(158, 158, 158, 0.3);
+  background-color: #F2F2F2;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: capitalize;
   font-weight: 600;
   border-radius: 20px;
   width: 96%;
   height: 30px;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 .main-container .section2 .container-card .container-button-hover button:hover {
-  background-color: rgb(169, 169, 169);
+  background-color: #ededed;
 }
 .main-container .section2 .container-card:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px 0px, rgba(0, 0, 0, 0.22) 0px 10px 10px 0px;
@@ -307,19 +318,29 @@
   z-index: 50;
   transform: scale(1.1);
   width: 302px;
-  height: 327px;
+  height: 320px;
   transition: all 0.2s ease;
   transition-delay: 1s;
 }
 .main-container .section2 .container-card:hover .container-ob {
-  transition: 0.1s;
+  transition: all 0.2s ease;
   transition-delay: 1s;
   margin: 0 10px;
 }
 .main-container .section2 .container-card:hover .container-ob .content .title {
-  transition: 0.1s;
+  transition: all 0.2s ease;
   transition-delay: 1s;
   font-size: 0.95rem;
+}
+.main-container .section2 .container-card:hover .container-ob .content .user {
+  transition: all 0.2s ease;
+  transition-delay: 1s;
+  font-size: 0.63rem;
+}
+.main-container .section2 .container-card:hover .container-ob .content .views {
+  transition: all 0.2s ease;
+  transition-delay: 1s;
+  font-size: 0.7rem;
 }
 .main-container .section2 .container-card:hover .fa-ellipsis-vertical {
   display: block;
@@ -373,12 +394,12 @@ a:hover {
 }
 
 .active {
-  background-color: rgba(158, 158, 158, 0.3);
+  background-color: #F2F2F2;
   font-family: "Roboto", sans-serif;
   border-radius: 11px;
 }
 
 .link:hover {
   border-radius: 11px;
-  background-color: rgba(158, 158, 158, 0.3);
+  background-color: #F2F2F2;
 }/*# sourceMappingURL=style.css.map */
