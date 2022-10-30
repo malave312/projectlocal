@@ -79,11 +79,13 @@ const getVideo = (resultVideo) => {
             resultVideo[i];
         const clone = template.cloneNode(true);
         clone.querySelector(".image").setAttribute("src", `${largeImageURL}`);
-        clone.querySelector('.image').setAttribute("alt", `prueba${i}`)
+        clone.querySelector(".image").setAttribute("alt", `prueba${i}`);
         clone.querySelector(".user-img").setAttribute("src", `${userImageURL}`);
         clone.querySelector(".user-img").setAttribute("alt", `prueba${i}`);
         clone.querySelector(".user").textContent = user;
-        clone.querySelector(".views").textContent = `${views} visualizaciones • hace ${i} horas`;
+        clone.querySelector(
+            ".views"
+        ).textContent = `${views} visualizaciones • hace ${i} horas`;
         fragment.appendChild(clone);
     }
     cards.appendChild(fragment);
@@ -91,7 +93,6 @@ const getVideo = (resultVideo) => {
         resultVideo.length / 4
     }, 286px)`;
 };
-
 
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function (e) {
