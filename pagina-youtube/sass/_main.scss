@@ -58,7 +58,6 @@
     .section2 {
         cursor: pointer;
         width: 100%;
-        background-color: $color-white-smoke;
         display: grid;
         grid-template-columns: repeat(4, 296px);
         justify-content: space-between;
@@ -82,7 +81,8 @@
                 }
             }
             .container-ob {
-                display: flex;
+                // Flex Direction, Align Items, Justify Content
+                @include flexbox(row, flex-start, flex-start);
                 margin: 0;
                 @include delay($opcion: false);
                 img {
@@ -96,14 +96,14 @@
                     margin-left: 10px;
                     margin-right: 6px;
                     .title {
-                        @include delay($opcion: false);
+                        // @include delay($opcion: false);
                         font-size: 1rem;
                         font-weight: 700;
-                        display: flex;
-                        justify-content: space-between;
+                        // Flex Direction, Align Items, Justify Content
+                        @include flexbox(row, flex-start, space-between);
                     }
                     .title:hover {
-                        color: $color-blue;
+                        color: red;
                     }
                     .user,
                     .views {
@@ -111,7 +111,7 @@
                         font-weight: 600;
                     }
                     .user:hover {
-                        color: rgba(128, 128, 128, 0.8);
+                        // color: rgba(128, 128, 128, 0.8);
                     }
                 }
             }
@@ -122,9 +122,8 @@
                 button {
                     overflow: visible;
                     background-color: $color-white-ah;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    // Flex Direction, Align Items, Justify Content
+                    @include flexbox(row, center, center);
                     font-weight: 600;
                     border-radius: 20px;
                     width: 96%;
@@ -136,28 +135,28 @@
                 }
             }
         }
-        .container-card:hover {
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px 0px,
-                rgba(0, 0, 0, 0.22) 0px 10px 10px 0px;
+        .container-card-h:hover {
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+                rgb(209, 213, 219) 0px 0px 0px 1px inset;
             background-color: $color-white;
             z-index: 50;
             transform: scale(1.1);
             width: 302px;
             height: 320px;
             @include delay($opcion: true);
-            .container-ob {
+            .container-ob-h {
                 @include delay($opcion: true);
                 margin: 0 10px;
                 .content {
-                    .title {
+                    .title-h {
                         @include delay($opcion: true);
                         font-size: 0.95rem;
                     }
-                    .user {
+                    .user-h {
                         @include delay($opcion: true);
                         font-size: 0.63rem;
                     }
-                    .views {
+                    .views-h {
                         @include delay($opcion: true);
                         font-size: 0.7rem;
                     }
@@ -168,8 +167,8 @@
             }
         }
         h5 {
-            display: flex;
-            justify-content: space-between;
+            // Flex Direction, Align Items, Justify Content
+            @include flexbox(row, flex-start, space-between);
         }
     }
 }
