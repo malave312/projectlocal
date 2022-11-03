@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.pagination {
+  display: inline-block;
+}
+
+a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.active {background-color: red;}
+</style>
+</head>
+<body>
+
+<h2>Active and Hoverablethis.className += " active"; Pagination</h2>
+
+<p>Move the mouse over the numbers.</p>
+
+<div id="pagination" class="pagination">
+    <a href="#" class="link active">1</a>
+    <a href="#" class="link">2</a>
+    <a href="#" class="link">3</a>
+</div>
+<script>
+    const
+        pagination = document.getElementById('pagination'),
+        btns = pagination.getElementsByClassName('link');
+
+        for (let p = 0; p < btns.length; p++) {
+            btns[p].addEventListener('click', function (e) {
+                const current = document.getElementsByClassName('active');
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+</script>
+</body>
+</html>
+
+

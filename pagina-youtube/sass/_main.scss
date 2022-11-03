@@ -135,7 +135,8 @@
                 }
             }
         }
-        .container-card-h:hover {
+        .card-hv {
+            display: block;
             box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
                 rgb(209, 213, 219) 0px 0px 0px 1px inset;
             background-color: $color-white;
@@ -143,21 +144,22 @@
             transform: scale(1.1);
             width: 302px;
             height: 320px;
-            @include delay($opcion: true);
-            .container-ob-h {
-                @include delay($opcion: true);
+            transition-timing-function: linear;
+            // @include delay($opcion: true);
+            .container-ob {
+                // @include delay($opcion: true);
                 margin: 0 10px;
                 .content {
-                    .title-h {
-                        @include delay($opcion: true);
+                    .tl-hv {
+                        // @include delay($opcion: true);
                         font-size: 0.95rem;
                     }
-                    .user-h {
-                        @include delay($opcion: true);
+                    .usr-hv {
+                        // @include delay($opcion: true);
                         font-size: 0.63rem;
                     }
-                    .views-h {
-                        @include delay($opcion: true);
+                    .vws-hv {
+                        // @include delay($opcion: true);
                         font-size: 0.7rem;
                     }
                 }
