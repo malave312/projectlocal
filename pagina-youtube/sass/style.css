@@ -1,3 +1,7 @@
+.wd {
+  width: 85px !important;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -191,6 +195,7 @@
 .main-container .section1 .bar,
 .main-container .section1 .bar-section2,
 .main-container .section1 .bar-section3 {
+  padding-left: 15px;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid rgba(192, 192, 192, 0.4);
@@ -201,7 +206,6 @@
 .main-container .section1 .bar-section3 .link {
   text-transform: capitalize;
   margin-left: 10px;
-  padding-left: 15px;
   text-align: left;
   width: 100%;
   height: 40px;
@@ -216,6 +220,11 @@
 .main-container .section1 .bar-section3 .link span {
   font-weight: 600;
   letter-spacing: -1.2px;
+}
+.main-container .section1 .bar button span,
+.main-container .section1 .bar-section2 button span,
+.main-container .section1 .bar-section3 button span {
+  margin-left: 1.2rem;
 }
 .main-container .section1 .bar-section3 .subtitle {
   text-transform: uppercase;
@@ -275,6 +284,8 @@
   margin-right: 6px;
 }
 .main-container .section2 .container-card .container-ob .content .title {
+  transition: all 0.1s ease;
+  transition-delay: 100ms;
   font-size: 1rem;
   font-weight: 700;
   display: flex;
@@ -282,8 +293,8 @@
   align-items: flex-start;
   justify-content: space-between;
 }
-.main-container .section2 .container-card .container-ob .content .title:hover {
-  color: red;
+.main-container .section2 .container-card .container-ob .content .title a:hover {
+  color: rgba(128, 128, 128, 0.8);
 }
 .main-container .section2 .container-card .container-ob .content .user,
 .main-container .section2 .container-card .container-ob .content .views {
@@ -311,6 +322,9 @@
 .main-container .section2 .container-card .container-button-hover button:hover {
   background-color: #ededed;
 }
+.main-container .section2 .container-card:hover .fa-ellipsis-vertical {
+  display: block;
+}
 .main-container .section2 .card-hv {
   display: block;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
@@ -318,8 +332,7 @@
   z-index: 50;
   transform: scale(1.1);
   width: 302px;
-  height: 320px;
-  transition-timing-function: linear;
+  height: 330px;
 }
 .main-container .section2 .card-hv .container-ob {
   margin: 0 10px;
@@ -333,14 +346,31 @@
 .main-container .section2 .card-hv .container-ob .content .vws-hv {
   font-size: 0.7rem;
 }
-.main-container .section2 .card-hv .fa-ellipsis-vertical {
-  display: block;
-}
 .main-container .section2 h5 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+}
+
+.toggle-nav {
+  width: 85px !important;
+  background-color: red;
+  font-size: 0.7rem;
+}
+.toggle-nav .bar, .toggle-nav .bar-section2 {
+  padding: 0 !important;
+}
+.toggle-nav .bar button, .toggle-nav .bar-section2 button {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toggle-nav .bar button span, .toggle-nav .bar-section2 button span {
+  margin: 0 !important;
+  padding: 0;
 }
 
 * {
