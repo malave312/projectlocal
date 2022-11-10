@@ -16,5 +16,13 @@ $color-blue: #1746a2;
 $color-black-opacity-5: rgb(0 0 0 / 0.5);
 $color-dark-gray-opacity-6: rgba(112, 112, 112, 0.15);
 $color-dark-white: #ededed;
+$color-list-nav: rgb(24, 24, 24);
+// $color-list-nav-hov: rgb(229, 57, 57);
+$color-list-nav-hov: rgb(229, 229, 229);
+$color-border-gray: rgba(57, 57, 57, .6);
+$ff-roboto: 'Roboto', sans-serif;
 
+.h-2 {
+    height: 200px !important;
+}
 .wd {width: 85px !important;}

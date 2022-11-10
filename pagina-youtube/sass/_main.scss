@@ -16,17 +16,20 @@
     text-align: left;
     width: 100%;
     height: 40px;
-    i {
-        color: inherit;
-    }
-    span {
-        font-weight: 600;
-        letter-spacing: -1.2px;
-    }
+}
+
+@mixin button-nav-list {
+    padding-left: 17px;
+    padding-right: 10px;
+    color: $color-white-smoke;
+    width: 100%;
+    height: 40px;
+    // margin-top: 7px;
 }
 
 .main-container {
     display: flex;
+    overflow-y: hidden;
     .section1 {
         width: 285px;
         overflow: hidden;
@@ -43,6 +46,7 @@
             button {
                 span {
                     margin-left: 1.2rem;
+                    font-family: $ff-roboto;
                 }
             }
         }
@@ -59,19 +63,20 @@
         cursor: pointer;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(4, 296px);
+        grid-template-columns: repeat(4, 24%);
         justify-content: space-between;
-        overflow-x: hidden;
         .container-card {
+            position: relative;
             border-radius: 8px;
-            width: 296px;
+            width: 100%;
             height: 246px;
-            overflow: hidden;
+            // overflow: hidden;
             @include delay;
             .fa-ellipsis-vertical {
                 display: none;
             }
             &-img {
+                position: relative;
                 border-radius: 8px;
                 overflow: hidden;
                 @include delay;
@@ -79,17 +84,38 @@
                     width: 100%;
                     height: 169px;
                 }
+                p {
+                    padding: .2rem;
+                    margin-right: .3rem;
+                    margin-bottom: .3rem;
+                    bottom: 0;
+                    right: 0;
+                    position: absolute;
+                    background-color: black;
+                    color: white;
+                    z-index: 5;
+                    font-size: .72rem;
+                    display: none;
+                }
+                &:hover {
+                    p {
+                        display: block;
+                    }
+                }
             }
             .container-ob {
                 // Flex Direction, Align Items, Justify Content
                 @include flexbox(row, flex-start, flex-start);
                 margin: 0;
                 @include delay;
-                img {
-                    @include delay;
-                    width: 35px;
-                    height: 35px;
-                    border-radius: 50%;
+                .img {
+                    height: 60px;
+                    img {
+                        @include delay;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                    }
                 }
                 .content {
                     @include delay;
@@ -116,9 +142,8 @@
                 }
             }
             .container-button-hover {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include flexbox(column, center, flex-start);
+                margin: 0 10px;
                 button {
                     overflow: visible;
                     background-color: $color-white-ah;
@@ -126,13 +151,55 @@
                     @include flexbox(row, center, center);
                     font-weight: 600;
                     border-radius: 20px;
-                    width: 96%;
+                    width: 100%;
                     height: 30px;
-                    font-size: 0.95rem;
+                    font-size: 80%;
                 }
                 button:hover {
                     background-color: $color-dark-white;
                 }
+            }
+        }
+        .drop {
+            position: absolute;
+            top: 200px;
+            bottom: 0;
+            right: -50%;
+            background-color: $color-white;
+            width: 300px;
+            height: 310px;
+            z-index: 3;
+            border-radius: 9px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 0px;
+            @include flexbox(column, flex-start, flex-start);
+            // padding-top: 8px;
+            padding: 8px 0;
+            button {
+                @include flexbox(row, center, flex-start);
+                @include button-nav-list;
+                i {
+                    font-size: 1.2rem;
+                }
+                a {
+                    font-size: 14px;
+                    letter-spacing: -0.5px;
+                    margin-left: 12px;
+                    font-weight: 600;
+                    color: black;
+                }
+                &:hover {
+                    background-color: $color-list-nav-hov;
+                }
+            }
+            .sub-section {
+                width: 100%;
+                border-top: 1px solid $color-border-gray;
+                margin-top: 9px;
+                padding-top: 9px;
+                // button {
+                //     @include flexbox(row, center, flex-start);
+                //     @include button-nav-list;
+                // }
             }
         }
         .container-card:hover {
@@ -142,13 +209,15 @@
         }
         .card-hv {
             display: block;
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
-                rgb(209, 213, 219) 0px 0px 0px 1px inset;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
             background-color: $color-white;
             z-index: 50;
-            transform: scale(1.1);
-            width: 302px;
-            height: 330px;
+            margin-top: 20px;
+            transform: scaleX(1.22) scaleY(1.2);
+            // width: 302px;
+            // height: 330px;
+            width: 100%;
+            height: 105%;
             .container-ob {
                 margin: 0 10px;
                 .content {
@@ -175,20 +244,24 @@
 }
 
 .toggle-nav {
-    width: 85px !important;
-    background-color: red;
-    font-size: .7rem;
-    .bar,.bar-section2 {
+    width: 80px !important;
+    font-size: 0.7rem;
+    padding: 0;
+    padding-right: 0 !important;
+    .bar,
+    .bar-section2 {
         padding: 0 !important;
         button {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 60px !important;
+            margin-left: 0 !important;
             span {
                 margin: 0 !important;
-                padding: 0 ;
+                padding: 0;
             }
         }
     }

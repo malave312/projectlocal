@@ -3,20 +3,21 @@ const containerVideo = document.getElementById("container-video"),
     fragment = document.createDocumentFragment(),
     cards = document.getElementById("container-card"),
     section2 = document.querySelector(".main-container > .section2"),
-    iconBar = document.getElementById('icon-nav');
+    iconBar = document.getElementById("icon-nav");
 
 const inputSearch = document.getElementById("input-search");
 const btnClear = document.getElementById("clear");
 const form = document.querySelector("form");
 
-const // card = document.getElementById('container-card'),
-    cardHover = document.getElementsByClassName("section2");
+const cardHover = document.getElementsByClassName("section2");
 
 const btns = document.getElementsByClassName("link"),
     icon = document.querySelectorAll(".link > i");
 let p = 0;
 
 document.addEventListener("DOMContentLoaded", (e) => {
+    e.preventDefault();
+    buttonActive();
     callApi();
 });
 
@@ -56,20 +57,26 @@ inputSearch.addEventListener("focusout", function (e) {
     document
         .querySelector(".navbar-section2-container-action-search")
         .classList.add("border-rounded");
-    // document.querySelector('.clear').classList.add('d-none');
-    // document.querySelector('.bi-search').classList.remove('border-rounded');
-    // document.querySelector('.bi-search').classList.replace('invisible', 'visible');
 });
 
-iconBar.addEventListener('click', function (e) {
-    console.log("click");
-    // document.querySelector('.section1').style.width = "85px";
-    // document.querySelector('.section1').classList.toggle("wd");
-    document.querySelector('.section1').classList.toggle("toggle-nav");
-    document.querySelector('.bar-section3').classList.toggle("d-none");
-    document.querySelector('.clock').classList.toggle("d-none");
-    // document.querySelector('.active').classList.add("bg-white");
-
+iconBar.addEventListener("click", function (e) {
+    document.querySelector(".section1").classList.toggle("toggle-nav");
+    document.querySelector(".bar-section3").classList.toggle("d-none");
+    document.querySelector(".clock").classList.toggle("d-none");
+    for (const btn of btns) {
+        btn.classList.toggle("bg-white");
+    }
+    for (const i of document.querySelectorAll('.container-card')) {
+        // console.log(iterator);
+        i.querySelector(".image").classList.toggle("h-2");
+        i.querySelector(".btn-add").classList.toggle("mt-2");
+    }
+    // if (document.querySelector(".section1").classList.contains("toggle-nav")) {
+        // document.querySelector('.image');
+        // clone.querySelector('.image').classList.add("h-19");
+        // clone.querySelector('.card-hv').classList.add("transform");
+        // console.log(document.querySelector(".section1"));
+    // }
 });
 
 const callApi = async () => {
@@ -86,11 +93,19 @@ const callApi = async () => {
 };
 
 const getVideo = (resultVideo) => {
-    for (let i = 0; i < resultVideo.length; i++) {
-        const { largeImageURL, userImageURL, user, views, webformatURL,pageURL } =
-            resultVideo[i];
+    let i = 0;
+    for (let result of resultVideo) {
+        i++;
+        const {
+            largeImageURL,
+            userImageURL,
+            user,
+            views,
+            webformatURL,
+            pageURL,
+        } = result;
         const clone = template.cloneNode(true);
-        clone.querySelector(".image").setAttribute("src",  webformatURL);
+        clone.querySelector(".image").setAttribute("src", webformatURL);
         clone.querySelector(".image").setAttribute("alt", `prueba${i}`);
         clone.querySelector(".user-img").setAttribute("src", userImageURL);
         clone.querySelector(".href").setAttribute("href", pageURL);
@@ -110,87 +125,95 @@ const getVideo = (resultVideo) => {
 };
 
 const videoThumbnail = (cardHover) => {
-    for (let i = 0; i < cardHover.length; i++) {
+    for (let hover of cardHover) {
         window.addEventListener('load', function (e) {
-            cardHover[i].querySelector(".image").onmouseover = standBy;
-            cardHover[i].onmouseout = cancel;
+            hover.querySelector(".image").onmouseover = standBy;
+            hover.onmouseout = cancel;
         });
-        // cardHover[i].addEventListener('mouseenter', function (e) {
-        //     cardHover[i].querySelector(".image").onmouseover = standBy;
-        //     cardHover[i].onmouseout = cancel;
-        // });
         function standBy() {
-            if (cardHover[i].dataset.state == "true" && cardHover[i].classList.contains("card-hv")) {
-                return
-            }
+            if (
+                hover.dataset.state == "true" &&
+                hover.classList.contains("card-hv")
+                ) {
+                    return;
+                }
             standBy.time = setTimeout(showCards, 1000);
-            for (let i = 0; i < cardHover.length; i++) {
-                if (cardHover[i].dataset.state == "true") {
-                    cardHover[i].classList.remove("card-hv");
-                    cardHover[i].querySelector('.title').classList.add("tl-hv");
-                    cardHover[i].querySelector('.user').classList.add("usr-hv");
-                    cardHover[i].querySelector('.views').classList.add("vws-hv");
-                }
-            }
-
+            bucle();
         }
-
         function cancel() {
-            // console.log(document.querySelector('.section1').classList.contains("container-card"));
-            if (cardHover[i].dataset.state == "true") {
-                return
-            }
-            for (let i = 0; i < cardHover.length; i++) {
-                if (cardHover[i].dataset.state == "true") {
-                    cardHover[i].classList.remove("card-hv");
-                    cardHover[i].querySelector('.title').classList.add("tl-hv");
-                cardHover[i].querySelector('.user').classList.add("usr-hv");
-                cardHover[i].querySelector('.views').classList.add("vws-hv");
-                    cardHover[i].dataset.state = false;
-                }
+            if (hover.dataset.state == "true") {
+                return;
             }
             clearTimeout(standBy.time);
+            bucle();
         }
-
         function showCards(e) {
-            if (cardHover[i].dataset.state == "false") {
-                cardHover[i].classList.add("card-hv");
-                // cardHover[i].classList.add("fade");
-                cardHover[i].querySelector('.title').classList.add("tl-hv");
-                cardHover[i].querySelector('.user').classList.add("usr-hv");
-                cardHover[i].querySelector('.views').classList.add("vws-hv");
-                cardHover[i].dataset.state = true;
+            if (hover.dataset.state == "false") {
+                hover.classList.add("card-hv");
+                hover.querySelector(".title").classList.add("tl-hv");
+                hover.querySelector(".user").classList.add("usr-hv");
+                hover.querySelector(".views").classList.add("vws-hv");
+                hover.querySelector(".container-button-hover").classList.replace("d-none", "d-flex");
+                hover.querySelector('.info').classList.add("d-none");
+                hover.dataset.state = true;
+                hover.querySelector('.container-card-img').style.borderBottomLeftRadius = "0px";
+                hover.querySelector('.container-card-img').style.borderBottomRightRadius = "0px";
+            }
+        }
+        function bucle() {
+            for (const c of cardHover) {
+                if (c.dataset.state == "true") {
+                    c.classList.remove("card-hv");
+                    c.querySelector(".title").classList.add("tl-hv");
+                    c.querySelector(".user").classList.add("usr-hv");
+                    c.querySelector(".views").classList.add("vws-hv");
+                    c.querySelector(".container-button-hover").classList.replace("d-flex", "d-none");
+                    c.querySelector('.info').classList.remove("d-none");
+                    c.querySelector('.container-card-img').style.borderBottomLeftRadius = "8px";
+                    c.querySelector('.container-card-img').style.borderBottomRightRadius = "8px";
+                    c.dataset.state = false;
+                }
+                if (c.dataset.state && !c.classList.contains("card-hv")) {
+                    c.dataset.state = false;
+                }
+                if (document.querySelector('.section1').classList.contains("toggle-nav")) {
+                    c.querySelector(".container-button-hover").classList.add("flex-row");
+                }
+                if (!document.querySelector('.section1').classList.contains("toggle-nav")) {
+                    c.querySelector(".container-button-hover").classList.remove("flex-row");
+                }
             }
         }
     }
 };
 
-for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function (e) {
-        const current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-
-        if (icon[i].classList[1].indexOf("-fill") == -1) {
-            document
-                .querySelector(`.${icon[i].dataset.icon}`)
-                .classList.replace(
-                    icon[i].dataset.icon,
-                    `${icon[i].dataset.icon}-fill`
-                );
-            for (let i = 0; i < icon.length; i++) {
-                if (
-                    btns[i].classList.contains("active") == false &&
-                    icon[i].attributes.class.nodeValue.indexOf("-fill") > -1
-                ) {
-                    document
-                        .querySelector(`.${icon[i].dataset.icon}-fill`)
-                        .classList.replace(
-                            `${icon[i].dataset.icon}-fill`,
-                            icon[i].dataset.icon
-                        );
+const buttonActive = () => {
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function (e) {
+            const current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            if (icon[i].classList[1].indexOf("-fill") == -1) {
+                document
+                    .querySelector(`.${icon[i].dataset.icon}`)
+                    .classList.replace(
+                        icon[i].dataset.icon,
+                        `${icon[i].dataset.icon}-fill`
+                    );
+                for (let i = 0; i < icon.length; i++) {
+                    if (
+                        btns[i].classList.contains("active") == false &&
+                        icon[i].attributes.class.nodeValue.indexOf("-fill") > -1
+                    ) {
+                        document
+                            .querySelector(`.${icon[i].dataset.icon}-fill`)
+                            .classList.replace(
+                                `${icon[i].dataset.icon}-fill`,
+                                icon[i].dataset.icon
+                            );
+                    }
                 }
             }
-        }
-    });
+        });
+    }
 }

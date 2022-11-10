@@ -1,3 +1,7 @@
+.h-2 {
+  height: 200px !important;
+}
+
 .wd {
   width: 85px !important;
 }
@@ -17,6 +21,23 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+.navbar-section1 .icon-nav {
+  width: 40px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+}
+.navbar-section1 .icon-nav:hover {
+  background-color: rgba(229, 229, 229, 0.6);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.navbar-section1 .icon-nav:active {
+  background-color: rgb(229, 229, 229);
+  border: 2px solid rgb(229, 229, 229);
+  border-radius: 50%;
+  transition: ease all 0.2s;
 }
 .navbar-section1-container {
   display: flex;
@@ -185,6 +206,7 @@
 
 .main-container {
   display: flex;
+  overflow-y: hidden;
 }
 .main-container .section1 {
   width: 285px;
@@ -210,21 +232,11 @@
   width: 100%;
   height: 40px;
 }
-.main-container .section1 .bar .link i,
-.main-container .section1 .bar-section2 .link i,
-.main-container .section1 .bar-section3 .link i {
-  color: inherit;
-}
-.main-container .section1 .bar .link span,
-.main-container .section1 .bar-section2 .link span,
-.main-container .section1 .bar-section3 .link span {
-  font-weight: 600;
-  letter-spacing: -1.2px;
-}
 .main-container .section1 .bar button span,
 .main-container .section1 .bar-section2 button span,
 .main-container .section1 .bar-section3 button span {
   margin-left: 1.2rem;
+  font-family: "Roboto", sans-serif;
 }
 .main-container .section1 .bar-section3 .subtitle {
   text-transform: uppercase;
@@ -236,15 +248,14 @@
   cursor: pointer;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 296px);
+  grid-template-columns: repeat(4, 24%);
   justify-content: space-between;
-  overflow-x: hidden;
 }
 .main-container .section2 .container-card {
+  position: relative;
   border-radius: 8px;
-  width: 296px;
+  width: 100%;
   height: 246px;
-  overflow: hidden;
   transition: all 0.1s ease;
   transition-delay: 100ms;
 }
@@ -252,6 +263,7 @@
   display: none;
 }
 .main-container .section2 .container-card-img {
+  position: relative;
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.1s ease;
@@ -260,6 +272,22 @@
 .main-container .section2 .container-card-img img {
   width: 100%;
   height: 169px;
+}
+.main-container .section2 .container-card-img p {
+  padding: 0.2rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-color: black;
+  color: white;
+  z-index: 5;
+  font-size: 0.72rem;
+  display: none;
+}
+.main-container .section2 .container-card-img:hover p {
+  display: block;
 }
 .main-container .section2 .container-card .container-ob {
   display: flex;
@@ -270,7 +298,10 @@
   transition: all 0.1s ease;
   transition-delay: 100ms;
 }
-.main-container .section2 .container-card .container-ob img {
+.main-container .section2 .container-card .container-ob .img {
+  height: 60px;
+}
+.main-container .section2 .container-card .container-ob .img img {
   transition: all 0.1s ease;
   transition-delay: 100ms;
   width: 35px;
@@ -305,6 +336,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  margin: 0 10px;
 }
 .main-container .section2 .container-card .container-button-hover button {
   overflow: visible;
@@ -315,24 +348,72 @@
   justify-content: center;
   font-weight: 600;
   border-radius: 20px;
-  width: 96%;
+  width: 100%;
   height: 30px;
-  font-size: 0.95rem;
+  font-size: 80%;
 }
 .main-container .section2 .container-card .container-button-hover button:hover {
   background-color: #ededed;
+}
+.main-container .section2 .drop {
+  position: absolute;
+  top: 200px;
+  bottom: 0;
+  right: -50%;
+  background-color: #fff;
+  width: 300px;
+  height: 310px;
+  z-index: 3;
+  border-radius: 9px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8px 0;
+}
+.main-container .section2 .drop button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 17px;
+  padding-right: 10px;
+  color: rgb(245, 245, 245);
+  width: 100%;
+  height: 40px;
+}
+.main-container .section2 .drop button i {
+  font-size: 1.2rem;
+}
+.main-container .section2 .drop button a {
+  font-size: 14px;
+  letter-spacing: -0.5px;
+  margin-left: 12px;
+  font-weight: 600;
+  color: black;
+}
+.main-container .section2 .drop button:hover {
+  background-color: rgb(229, 229, 229);
+}
+.main-container .section2 .drop .sub-section {
+  width: 100%;
+  border-top: 1px solid rgba(57, 57, 57, 0.6);
+  margin-top: 9px;
+  padding-top: 9px;
 }
 .main-container .section2 .container-card:hover .fa-ellipsis-vertical {
   display: block;
 }
 .main-container .section2 .card-hv {
   display: block;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   background-color: #fff;
   z-index: 50;
-  transform: scale(1.1);
-  width: 302px;
-  height: 330px;
+  margin-top: 20px;
+  transform: scaleX(1.22) scaleY(1.2);
+  width: 100%;
+  height: 105%;
 }
 .main-container .section2 .card-hv .container-ob {
   margin: 0 10px;
@@ -354,21 +435,27 @@
 }
 
 .toggle-nav {
-  width: 85px !important;
-  background-color: red;
+  width: 80px !important;
   font-size: 0.7rem;
+  padding: 0;
+  padding-right: 0 !important;
 }
-.toggle-nav .bar, .toggle-nav .bar-section2 {
+.toggle-nav .bar,
+.toggle-nav .bar-section2 {
   padding: 0 !important;
 }
-.toggle-nav .bar button, .toggle-nav .bar-section2 button {
-  margin-top: 30px;
+.toggle-nav .bar button,
+.toggle-nav .bar-section2 button {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 60px !important;
+  margin-left: 0 !important;
 }
-.toggle-nav .bar button span, .toggle-nav .bar-section2 button span {
+.toggle-nav .bar button span,
+.toggle-nav .bar-section2 button span {
   margin: 0 !important;
   padding: 0;
 }
@@ -420,6 +507,7 @@ a:hover {
   background-color: #F2F2F2;
   font-family: "Roboto", sans-serif;
   border-radius: 11px;
+  font-weight: 600;
 }
 
 .link:hover {

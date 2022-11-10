@@ -9,6 +9,20 @@
     &-section1 {
         // Flex Direction, Align Items, Justify Content
         @include flexbox(row, center, flex-start);
+        .icon-nav {
+            width: 40px;
+            height: 38px;
+            border-radius: 50%;
+            border:0;
+
+        }
+        .icon-nav:hover {
+            @include buttonhov;
+
+        }
+        .icon-nav:active {
+            @include buttonactiv;
+        }
         &-container {
             // Flex Direction, Align Items, Justify Content
             @include flexbox(row, center, flex-start);

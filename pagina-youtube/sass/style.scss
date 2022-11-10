@@ -1,6 +1,3 @@
-// font-family: 'Open Sans', sans-serif;
-// font-family: 'Oswald', sans-serif;
-// font-family: 'Roboto', sans-serif;
 @mixin icon {
     // border-radius: 50%;
     text-decoration: none;
@@ -23,7 +20,22 @@
     justify-content: $j-content;
 }
 
-@import "variables", "header", "main";
+@mixin buttonhov {
+    background-color: rgba(229, 229, 229,.6);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+@mixin buttonactiv {
+    background-color: rgb(229, 229, 229);
+    border: 2px solid rgb(229, 229, 229);
+    border-radius: 50%;
+    transition: ease all .2s;
+}
+
+@import "variables";
+@import "header";
+@import "main";
 
 * {
     box-sizing: border-box;
@@ -66,8 +78,9 @@ a:hover {
 
 .active {
     background-color: $color-white-ah;
-    font-family: "Roboto", sans-serif;
+    font-family: $ff-roboto;
     border-radius: 11px;
+    font-weight: 600;
 }
 
 .link:hover {
